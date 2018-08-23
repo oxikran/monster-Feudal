@@ -10,3 +10,9 @@ C:\Users\Usuario\Source\Repos\aramoxidb\armoxiDB\armoxiDB\obj\Debug\armoxiDB.csp
 C:\Users\Usuario\Source\Repos\aramoxidb\armoxiDB\armoxiDB\obj\Debug\armoxiDB.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Source\Repos\aramoxidb\armoxiDB\armoxiDB\obj\Debug\armoxiDB.dll
 C:\Users\Usuario\Source\Repos\aramoxidb\armoxiDB\armoxiDB\obj\Debug\armoxiDB.pdb
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\bin\Debug\armoxiDB.dll
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\bin\Debug\armoxiDB.pdb
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Debug\armoxiDB.csprojAssemblyReference.cache
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Debug\armoxiDB.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Debug\armoxiDB.dll
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Debug\armoxiDB.pdb

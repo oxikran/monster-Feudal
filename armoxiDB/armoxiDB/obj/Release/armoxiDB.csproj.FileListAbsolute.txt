@@ -1,0 +1,5 @@
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\bin\Release\armoxiDB.dll
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\bin\Release\armoxiDB.pdb
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.dll
+C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.pdb

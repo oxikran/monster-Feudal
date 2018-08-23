@@ -147,5 +147,11 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\armoxiDB\armoxiDB\armoxiDB.csproj">
+      <Project>{4891A050-CBF4-4DB7-8696-4D1DBC1F9DFC}</Project>
+      <Name>armoxiDB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

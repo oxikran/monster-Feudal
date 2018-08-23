@@ -11,3 +11,19 @@ C:\Users\Usuario\Documents\Visual Studio 2017\Projects\WindowsApp1\WindowsApp1\o
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.exe
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.xml
 C:\Users\Usuario\Documents\Visual Studio 2017\Projects\WindowsApp1\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\bin\Debug\WindowsApp1.exe.config
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\bin\Debug\WindowsApp1.exe
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\bin\Debug\WindowsApp1.pdb
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\bin\Debug\WindowsApp1.xml
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.vbprojAssemblyReference.cache
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.vbproj.ResolveComReference.cache
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.Form1.resources
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.vbproj.GenerateResource.cache
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CoreCompileInputs.cache
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.exe
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.xml
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.pdb
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\bin\Debug\armoxiDB.dll
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\bin\Debug\armoxiDB.pdb
+C:\Users\Usuario\Source\Repos\monster Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CopyComplete
