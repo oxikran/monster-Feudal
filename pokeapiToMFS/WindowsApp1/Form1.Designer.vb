@@ -41,129 +41,147 @@ Partial Class Form1
         Me.PrimeButton = New System.Windows.Forms.Button()
         Me.Codigo = New System.Windows.Forms.TextBox()
         Me.Buscar = New System.Windows.Forms.Button()
+        Me.reemplazo = New System.Windows.Forms.Button()
+        Me.Carpeta = New System.Windows.Forms.Button()
+        Me.CarpetaText = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'rutaApi
         '
-        Me.rutaApi.Location = New System.Drawing.Point(28, 20)
+        Me.rutaApi.Location = New System.Drawing.Point(21, 16)
+        Me.rutaApi.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rutaApi.Name = "rutaApi"
-        Me.rutaApi.Size = New System.Drawing.Size(640, 22)
+        Me.rutaApi.Size = New System.Drawing.Size(481, 20)
         Me.rutaApi.TabIndex = 0
         '
         'apiBut
         '
-        Me.apiBut.Location = New System.Drawing.Point(674, 16)
+        Me.apiBut.Location = New System.Drawing.Point(506, 13)
+        Me.apiBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.apiBut.Name = "apiBut"
-        Me.apiBut.Size = New System.Drawing.Size(24, 30)
+        Me.apiBut.Size = New System.Drawing.Size(18, 24)
         Me.apiBut.TabIndex = 1
         Me.apiBut.Text = "?"
         Me.apiBut.UseVisualStyleBackColor = True
         '
         'excelText
         '
-        Me.excelText.Location = New System.Drawing.Point(28, 65)
+        Me.excelText.Location = New System.Drawing.Point(21, 53)
+        Me.excelText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.excelText.Name = "excelText"
-        Me.excelText.Size = New System.Drawing.Size(640, 22)
+        Me.excelText.Size = New System.Drawing.Size(481, 20)
         Me.excelText.TabIndex = 2
         '
         'ExcelBut
         '
-        Me.ExcelBut.Location = New System.Drawing.Point(674, 61)
+        Me.ExcelBut.Location = New System.Drawing.Point(506, 50)
+        Me.ExcelBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ExcelBut.Name = "ExcelBut"
-        Me.ExcelBut.Size = New System.Drawing.Size(24, 30)
+        Me.ExcelBut.Size = New System.Drawing.Size(18, 24)
         Me.ExcelBut.TabIndex = 3
         Me.ExcelBut.Text = "?"
         Me.ExcelBut.UseVisualStyleBackColor = True
         '
         'comenzarBut
         '
-        Me.comenzarBut.Location = New System.Drawing.Point(28, 265)
+        Me.comenzarBut.Location = New System.Drawing.Point(21, 285)
+        Me.comenzarBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.comenzarBut.Name = "comenzarBut"
-        Me.comenzarBut.Size = New System.Drawing.Size(360, 49)
+        Me.comenzarBut.Size = New System.Drawing.Size(270, 40)
         Me.comenzarBut.TabIndex = 4
         Me.comenzarBut.Text = "comenzar"
         Me.comenzarBut.UseVisualStyleBackColor = True
         '
         'movText
         '
-        Me.movText.Location = New System.Drawing.Point(28, 109)
+        Me.movText.Location = New System.Drawing.Point(21, 89)
+        Me.movText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.movText.Name = "movText"
-        Me.movText.Size = New System.Drawing.Size(640, 22)
+        Me.movText.Size = New System.Drawing.Size(481, 20)
         Me.movText.TabIndex = 5
         '
         'moviminetosBut
         '
-        Me.moviminetosBut.Location = New System.Drawing.Point(674, 109)
+        Me.moviminetosBut.Location = New System.Drawing.Point(506, 89)
+        Me.moviminetosBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.moviminetosBut.Name = "moviminetosBut"
-        Me.moviminetosBut.Size = New System.Drawing.Size(24, 30)
+        Me.moviminetosBut.Size = New System.Drawing.Size(18, 24)
         Me.moviminetosBut.TabIndex = 6
         Me.moviminetosBut.Text = "?"
         Me.moviminetosBut.UseVisualStyleBackColor = True
         '
         'SeguirBut
         '
-        Me.SeguirBut.Location = New System.Drawing.Point(428, 265)
+        Me.SeguirBut.Location = New System.Drawing.Point(321, 285)
+        Me.SeguirBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.SeguirBut.Name = "SeguirBut"
-        Me.SeguirBut.Size = New System.Drawing.Size(360, 49)
+        Me.SeguirBut.Size = New System.Drawing.Size(270, 40)
         Me.SeguirBut.TabIndex = 7
         Me.SeguirBut.Text = "Segunda Parte"
         Me.SeguirBut.UseVisualStyleBackColor = True
         '
         'terceraBut
         '
-        Me.terceraBut.Location = New System.Drawing.Point(28, 320)
+        Me.terceraBut.Location = New System.Drawing.Point(21, 330)
+        Me.terceraBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.terceraBut.Name = "terceraBut"
-        Me.terceraBut.Size = New System.Drawing.Size(360, 49)
+        Me.terceraBut.Size = New System.Drawing.Size(270, 40)
         Me.terceraBut.TabIndex = 8
         Me.terceraBut.Text = "Tercera Parte"
         Me.terceraBut.UseVisualStyleBackColor = True
         '
         'CuartaBut
         '
-        Me.CuartaBut.Location = New System.Drawing.Point(428, 320)
+        Me.CuartaBut.Location = New System.Drawing.Point(321, 330)
+        Me.CuartaBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CuartaBut.Name = "CuartaBut"
-        Me.CuartaBut.Size = New System.Drawing.Size(360, 49)
+        Me.CuartaBut.Size = New System.Drawing.Size(270, 40)
         Me.CuartaBut.TabIndex = 9
         Me.CuartaBut.Text = "Cuarta Parte"
         Me.CuartaBut.UseVisualStyleBackColor = True
         '
         'eternoText
         '
-        Me.eternoText.Location = New System.Drawing.Point(28, 149)
+        Me.eternoText.Location = New System.Drawing.Point(21, 121)
+        Me.eternoText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.eternoText.Name = "eternoText"
-        Me.eternoText.Size = New System.Drawing.Size(640, 22)
+        Me.eternoText.Size = New System.Drawing.Size(481, 20)
         Me.eternoText.TabIndex = 10
         '
         'EternoBut
         '
-        Me.EternoBut.Location = New System.Drawing.Point(674, 145)
+        Me.EternoBut.Location = New System.Drawing.Point(506, 118)
+        Me.EternoBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.EternoBut.Name = "EternoBut"
-        Me.EternoBut.Size = New System.Drawing.Size(24, 30)
+        Me.EternoBut.Size = New System.Drawing.Size(18, 24)
         Me.EternoBut.TabIndex = 11
         Me.EternoBut.Text = "?"
         Me.EternoBut.UseVisualStyleBackColor = True
         '
         'metaText
         '
-        Me.metaText.Location = New System.Drawing.Point(28, 186)
+        Me.metaText.Location = New System.Drawing.Point(21, 151)
+        Me.metaText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.metaText.Name = "metaText"
-        Me.metaText.Size = New System.Drawing.Size(640, 22)
+        Me.metaText.Size = New System.Drawing.Size(481, 20)
         Me.metaText.TabIndex = 12
         '
         'metaBut
         '
-        Me.metaBut.Location = New System.Drawing.Point(674, 186)
+        Me.metaBut.Location = New System.Drawing.Point(506, 151)
+        Me.metaBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.metaBut.Name = "metaBut"
-        Me.metaBut.Size = New System.Drawing.Size(24, 30)
+        Me.metaBut.Size = New System.Drawing.Size(18, 24)
         Me.metaBut.TabIndex = 13
         Me.metaBut.Text = "?"
         Me.metaBut.UseVisualStyleBackColor = True
         '
         'QuinBut
         '
-        Me.QuinBut.Location = New System.Drawing.Point(28, 375)
+        Me.QuinBut.Location = New System.Drawing.Point(21, 375)
+        Me.QuinBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.QuinBut.Name = "QuinBut"
-        Me.QuinBut.Size = New System.Drawing.Size(360, 49)
+        Me.QuinBut.Size = New System.Drawing.Size(270, 40)
         Me.QuinBut.TabIndex = 14
         Me.QuinBut.Text = "Quinta Parte"
         Me.QuinBut.UseMnemonic = False
@@ -171,9 +189,10 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(428, 375)
+        Me.Button1.Location = New System.Drawing.Point(321, 375)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(360, 49)
+        Me.Button1.Size = New System.Drawing.Size(270, 40)
         Me.Button1.TabIndex = 15
         Me.Button1.Text = "Bases de Datos"
         Me.Button1.UseMnemonic = False
@@ -181,9 +200,10 @@ Partial Class Form1
         '
         'PrimeButton
         '
-        Me.PrimeButton.Location = New System.Drawing.Point(28, 430)
+        Me.PrimeButton.Location = New System.Drawing.Point(21, 419)
+        Me.PrimeButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.PrimeButton.Name = "PrimeButton"
-        Me.PrimeButton.Size = New System.Drawing.Size(360, 49)
+        Me.PrimeButton.Size = New System.Drawing.Size(270, 40)
         Me.PrimeButton.TabIndex = 16
         Me.PrimeButton.Text = "Ver Primero"
         Me.PrimeButton.UseMnemonic = False
@@ -191,26 +211,60 @@ Partial Class Form1
         '
         'Codigo
         '
-        Me.Codigo.Location = New System.Drawing.Point(28, 225)
+        Me.Codigo.Location = New System.Drawing.Point(21, 183)
+        Me.Codigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Codigo.Name = "Codigo"
-        Me.Codigo.Size = New System.Drawing.Size(640, 22)
+        Me.Codigo.Size = New System.Drawing.Size(481, 20)
         Me.Codigo.TabIndex = 17
         '
         'Buscar
         '
-        Me.Buscar.Location = New System.Drawing.Point(428, 430)
+        Me.Buscar.Location = New System.Drawing.Point(321, 419)
+        Me.Buscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Buscar.Name = "Buscar"
-        Me.Buscar.Size = New System.Drawing.Size(360, 49)
+        Me.Buscar.Size = New System.Drawing.Size(270, 40)
         Me.Buscar.TabIndex = 18
         Me.Buscar.Text = "Buscar"
         Me.Buscar.UseMnemonic = False
         Me.Buscar.UseVisualStyleBackColor = True
         '
+        'reemplazo
+        '
+        Me.reemplazo.Location = New System.Drawing.Point(21, 463)
+        Me.reemplazo.Margin = New System.Windows.Forms.Padding(2)
+        Me.reemplazo.Name = "reemplazo"
+        Me.reemplazo.Size = New System.Drawing.Size(270, 40)
+        Me.reemplazo.TabIndex = 19
+        Me.reemplazo.Text = "reemplazo"
+        Me.reemplazo.UseMnemonic = False
+        Me.reemplazo.UseVisualStyleBackColor = True
+        '
+        'Carpeta
+        '
+        Me.Carpeta.Location = New System.Drawing.Point(506, 207)
+        Me.Carpeta.Margin = New System.Windows.Forms.Padding(2)
+        Me.Carpeta.Name = "Carpeta"
+        Me.Carpeta.Size = New System.Drawing.Size(18, 24)
+        Me.Carpeta.TabIndex = 21
+        Me.Carpeta.Text = "?"
+        Me.Carpeta.UseVisualStyleBackColor = True
+        '
+        'CarpetaText
+        '
+        Me.CarpetaText.Location = New System.Drawing.Point(21, 211)
+        Me.CarpetaText.Margin = New System.Windows.Forms.Padding(2)
+        Me.CarpetaText.Name = "CarpetaText"
+        Me.CarpetaText.Size = New System.Drawing.Size(481, 20)
+        Me.CarpetaText.TabIndex = 20
+        '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 573)
+        Me.ClientSize = New System.Drawing.Size(600, 589)
+        Me.Controls.Add(Me.Carpeta)
+        Me.Controls.Add(Me.CarpetaText)
+        Me.Controls.Add(Me.reemplazo)
         Me.Controls.Add(Me.Buscar)
         Me.Controls.Add(Me.Codigo)
         Me.Controls.Add(Me.PrimeButton)
@@ -230,6 +284,7 @@ Partial Class Form1
         Me.Controls.Add(Me.excelText)
         Me.Controls.Add(Me.apiBut)
         Me.Controls.Add(Me.rutaApi)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -256,4 +311,7 @@ Partial Class Form1
     Friend WithEvents PrimeButton As Button
     Friend WithEvents Codigo As TextBox
     Friend WithEvents Buscar As Button
+    Friend WithEvents reemplazo As Button
+    Friend WithEvents Carpeta As Button
+    Friend WithEvents CarpetaText As TextBox
 End Class

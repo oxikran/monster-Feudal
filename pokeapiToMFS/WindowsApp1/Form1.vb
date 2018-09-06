@@ -1,4 +1,5 @@
 ﻿Imports armoxiDB
+Imports System.IO
 Imports Microsoft.Office.Interop.Excel
 
 Public Class Form1
@@ -717,6 +718,73 @@ Public Class Form1
         MsgBox(DB.OxiField(1))
 
         DB.CloseDB()
+
+    End Sub
+
+    Private Sub Carpeta_Click(sender As Object, e As EventArgs) Handles Carpeta.Click
+
+        Dim dialog As New FolderBrowserDialog
+
+        dialog.ShowDialog()
+
+        CarpetaText.Text = dialog.SelectedPath & "\"
+
+    End Sub
+
+    Private Sub reemplazo_Click(sender As Object, e As EventArgs) Handles reemplazo.Click
+
+        Dim excel As New Application
+        Dim excel2 As New Application
+        Dim workbook As Workbook
+        Dim wb2 As Workbook
+        Dim data() As String
+        Dim Files() As String
+        Dim file As String
+        Dim movimientos(374) As String
+        Dim index As Integer
+
+        Files = Directory.GetFiles(CarpetaText.Text)
+
+        wb2 = excel2.Workbooks.Open(movText.Text)
+
+        For Each sheet2 As Worksheet In wb2.Worksheets
+
+            For index = 2 To 376
+
+                movimientos(index - 2) = sheet2.Cells(index, 2)
+
+            Next
+
+        Next
+
+        wb2.Save()
+
+        wb2.Close()
+        wb2 = Nothing
+
+        excel2.Workbooks.Close()
+
+        For Each file In Files
+
+            workbook = excel.Workbooks.Open(file)
+
+
+            For Each sheet As Worksheet In workbook.Worksheets
+
+
+
+            Next
+
+            workbook.Save()
+
+            workbook.Close()
+            workbook = Nothing
+
+            excel.Workbooks.Close()
+
+
+        Next
+
 
     End Sub
 End Class
