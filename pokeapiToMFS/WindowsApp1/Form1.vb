@@ -737,11 +737,14 @@ Public Class Form1
         Dim excel2 As New Application
         Dim workbook As Workbook
         Dim wb2 As Workbook
+        Dim existe As Boolean
         Dim data() As String
         Dim Files() As String
         Dim file As String
+        Dim existen(374) As Boolean
         Dim movimientos(374) As String
         Dim index As Integer
+        Dim errores As String
 
         Files = Directory.GetFiles(CarpetaText.Text)
 
@@ -752,6 +755,7 @@ Public Class Form1
             For index = 2 To 376
 
                 movimientos(index - 2) = sheet2.Cells(index, 2)
+                existen(index - 2) = False
 
             Next
 
@@ -771,9 +775,42 @@ Public Class Form1
 
             For Each sheet As Worksheet In workbook.Worksheets
 
+                For index3 As Integer = 0 To UBound(movimientos)
 
+
+
+                    For index2 As Integer = 2 To 635569
+
+                        If sheet.Cells(index2, 1).value = "" Then
+
+                            Exit For
+
+                        End If
+
+                        If UCase(movimientos(index3).Trim) = UCase(sheet.Cells(index2, 1).value.trim) Then
+                            existe = True
+                            existen(index3) = True
+                        End If
+                    Next
+
+                Next
+            Next
+
+            For index4 As Integer = 0 To UBound(existen)
+
+                If Not existen(index4) Then
+
+                    errores = errores & movimientos(index4) & vbCrLf
+
+                End If
 
             Next
+
+            If errores.Trim <> "" Then
+
+                My.Computer.FileSystem.WriteAllText("C:\Users\narciso\source\repos\monster-Feudal\DB\Tablas de aprendizaje de movimientos\Terminadas\errores.txt", errores, False)
+
+            End If
 
             workbook.Save()
 
@@ -785,6 +822,7 @@ Public Class Form1
 
         Next
 
+        MsgBox("fin")
 
     End Sub
 End Class
