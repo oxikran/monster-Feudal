@@ -7,7 +7,7 @@ Public Class Form1
 
         Dim dialog As New OpenFileDialog
 
-        dialog.InitialDirectory = "C:\Users\Usuario\Source\Repos\pokeapi\data\v2\csv"
+        dialog.InitialDirectory = "C:\Users\oxikr\Source\Repos\pokeapi\data\v2\csv"
 
         dialog.Filter = "csv|move_names.csv"
 
@@ -23,7 +23,7 @@ Public Class Form1
 
         Dim dialog As New OpenFileDialog
 
-        dialog.InitialDirectory = "C:\Users\Usuario\Source\Repos\monster Feudal\DB"
+        dialog.InitialDirectory = "C:\Users\oxikr\Source\Repos\monster Feudal\DB"
 
         dialog.Filter = "Excel|Lista de movimientos*.xlsx"
 
@@ -153,7 +153,7 @@ Public Class Form1
 
         Dim dialog As New OpenFileDialog
 
-        dialog.InitialDirectory = "C:\Users\Usuario\Source\Repos\pokeapi\data\v2\csv"
+        dialog.InitialDirectory = "C:\Users\oxikr\Source\Repos\pokeapi\data\v2\csv"
 
         dialog.Filter = "csv|moves.csv"
 
@@ -361,7 +361,7 @@ Public Class Form1
 
         Dim dialog As New OpenFileDialog
 
-        dialog.InitialDirectory = "C:\Users\Usuario\Source\Repos\pokeapi\data\v2\csv"
+        dialog.InitialDirectory = "C:\Users\oxikr\Source\Repos\pokeapi\data\v2\csv"
 
         dialog.Filter = "csv|move_flag_map.csv"
 
@@ -377,7 +377,7 @@ Public Class Form1
 
         Dim dialog As New OpenFileDialog
 
-        dialog.InitialDirectory = "C:\Users\Usuario\Source\Repos\pokeapi\data\v2\csv"
+        dialog.InitialDirectory = "C:\Users\oxikr\Source\Repos\pokeapi\data\v2\csv"
 
         dialog.Filter = "csv|move_meta.csv"
 
@@ -605,8 +605,8 @@ Public Class Form1
 
         workbook = excel.Workbooks.Open(excelText.Text)
 
-        DB.createBD("C:\Users\Usuario\Source\Repos\monster Feudal\DB\final\", "moves")
-        DB.OpenDB("C:\Users\Usuario\Source\Repos\monster Feudal\DB\final\moves")
+        DB.createBD("C:\Users\oxikr\Source\Repos\monster Feudal\DB\final\", "moves")
+        DB.OpenDB("C:\Users\oxikr\Source\Repos\monster Feudal\DB\final\moves")
 
         For Each Sheet As Worksheet In workbook.Worksheets
 
@@ -682,8 +682,8 @@ Public Class Form1
 
         Dim DB As New aramoxi
 
-        'DB.createBD("C:\Users\Usuario\Source\Repos\monster Feudal\DB\final\", "moves")
-        DB.OpenDB("C:\Users\Usuario\Source\Repos\monster Feudal\DB\final\moves")
+        'DB.createBD("C:\Users\oxikr\Source\Repos\monster Feudal\DB\final\", "moves")
+        DB.OpenDB("C:\Users\oxikr\Source\Repos\monster Feudal\DB\final\moves")
 
         DB.movefirst()
         MessageBox.Show(DB.OxiField(0) & " , " & DB.OxiField(1))
@@ -696,7 +696,7 @@ Public Class Form1
         Dim DB As New aramoxi
         Dim index As Integer
 
-        DB.OpenDB("C:\Users\Usuario\Source\Repos\monster Feudal\DB\final\moves")
+        DB.OpenDB("C:\Users\oxikr\Source\Repos\monster Feudal\DB\final\moves")
 
         DB.movefirst()
 
@@ -709,6 +709,7 @@ Public Class Form1
             Else
 
                 DB.MoveNext()
+
 
             End If
 
@@ -725,6 +726,8 @@ Public Class Form1
 
         Dim dialog As New FolderBrowserDialog
 
+        'dialog.RootFolder = "C:\Users\oxikr\Source\Repos\monster Feudal\DB"
+
         dialog.ShowDialog()
 
         CarpetaText.Text = dialog.SelectedPath & "\"
@@ -739,23 +742,26 @@ Public Class Form1
         Dim wb2 As Workbook
         Dim existe As Boolean
         Dim data() As String
+        Dim ids(374) As Integer
         Dim Files() As String
         Dim file As String
         Dim existen(374) As Boolean
         Dim movimientos(374) As String
         Dim index As Integer
+        Dim pokemons As String
         Dim errores As String
 
         Files = Directory.GetFiles(CarpetaText.Text)
 
-        wb2 = excel2.Workbooks.Open(movText.Text)
+        wb2 = excel2.Workbooks.Open(excelText.Text)
 
         For Each sheet2 As Worksheet In wb2.Worksheets
 
             For index = 2 To 376
 
-                movimientos(index - 2) = sheet2.Cells(index, 2)
+                movimientos(index - 2) = sheet2.Cells(index, 2).value
                 existen(index - 2) = False
+                ids(index - 2) = sheet2.Cells(index, 1).value
 
             Next
 
@@ -775,42 +781,29 @@ Public Class Form1
 
             For Each sheet As Worksheet In workbook.Worksheets
 
-                For index3 As Integer = 0 To UBound(movimientos)
 
 
 
-                    For index2 As Integer = 2 To 635569
 
-                        If sheet.Cells(index2, 1).value = "" Then
+                For index2 As Integer = 2 To 635569
+                    If sheet.Cells(index2, 1).value = "" Then
 
-                            Exit For
-
-                        End If
+                        Exit For
+                    End If
+                    For index3 As Integer = 0 To UBound(movimientos)
 
                         If UCase(movimientos(index3).Trim) = UCase(sheet.Cells(index2, 1).value.trim) Then
+                            sheet.Cells(index2, 1) = ids(index3)
                             existe = True
                             existen(index3) = True
+                            Exit For
                         End If
                     Next
 
                 Next
             Next
 
-            For index4 As Integer = 0 To UBound(existen)
 
-                If Not existen(index4) Then
-
-                    errores = errores & movimientos(index4) & vbCrLf
-
-                End If
-
-            Next
-
-            If errores.Trim <> "" Then
-
-                My.Computer.FileSystem.WriteAllText("C:\Users\narciso\source\repos\monster-Feudal\DB\Tablas de aprendizaje de movimientos\Terminadas\errores.txt", errores, False)
-
-            End If
 
             workbook.Save()
 
@@ -821,6 +814,48 @@ Public Class Form1
 
 
         Next
+
+        For Each file In Files
+
+            workbook = excel.Workbooks.Open(file)
+
+            For Each sheet3 As Worksheet In workbook.Worksheets
+
+                For index5 As Integer = 2 To 635569
+
+                    If Not sheet3.Cells(index5, 1).value > 0 Then
+
+                        pokemons = pokemons & file & sheet3.Cells(index5, 1).value & vbCrLf
+
+                    End If
+
+                Next
+
+            Next
+
+        Next
+
+        For index4 As Integer = 0 To UBound(existen)
+
+            If Not existen(index4) Then
+
+                errores = errores & movimientos(index4) & vbCrLf
+
+            End If
+
+        Next
+
+        If pokemons.Trim <> "" Then
+
+            My.Computer.FileSystem.WriteAllText("C:\Users\oxikr\source\repos\monster-Feudal\DB\Tablas de aprendizaje de movimientos\Terminadas\erroresPokes.txt", pokemons, False)
+
+        End If
+
+        If errores.Trim <> "" Then
+
+            My.Computer.FileSystem.WriteAllText("C:\Users\oxikr\source\repos\monster-Feudal\DB\Tablas de aprendizaje de movimientos\Terminadas\errores.txt", errores, False)
+
+        End If
 
         MsgBox("fin")
 
