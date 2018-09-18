@@ -696,7 +696,7 @@ Public Class Form1
         Dim DB As New aramoxi
         Dim index As Integer
 
-        DB.OpenDB("C:\Users\oxikr\Source\Repos\monster Feudal\DB\final\moves")
+        DB.OpenDB("C:\Users\oxikr\Source\Repos\monster-Feudal\DB\final\moves")
 
         DB.movefirst()
 
@@ -815,23 +815,74 @@ Public Class Form1
 
         Next
 
+
+        MsgBox("fin")
+
+    End Sub
+
+    Private Sub compBut_Click(sender As Object, e As EventArgs) Handles compBut.Click
+
+        Dim excel As New Application
+        Dim workbook As Workbook
+        Dim file As String
+        Dim files() As String
+        Dim pokemons As String
+        Dim existen(374) As Boolean
+        Dim errores As String
+        Dim movimientos(374) As String
+        Dim sheet As Worksheet
+
+        files = Directory.GetFiles(CarpetaText.Text)
+
+        workbook = excel.Workbooks.Open(excelText.Text)
+
+        sheet = workbook.ActiveSheet
+
+        For index = 2 To 376
+
+            movimientos(index - 2) = sheet.Cells(index, 1).value
+            existen(index - 2) = False
+
+        Next
+
+        workbook.Close()
+
         For Each file In Files
 
-            workbook = excel.Workbooks.Open(file)
+            Workbook = excel.Workbooks.Open(file)
 
-            For Each sheet3 As Worksheet In workbook.Worksheets
+            For Each sheet2 As Worksheet In workbook.Worksheets
 
-                For index5 As Integer = 2 To 635569
+                For index2 As Integer = 0 To UBound(movimientos)
+                    For index5 As Integer = 2 To 635569
 
-                    If Not sheet3.Cells(index5, 1).value > 0 Then
 
-                        pokemons = pokemons & file & sheet3.Cells(index5, 1).value & vbCrLf
+                        If existen(index2) Then
 
-                    End If
+                            Exit For
+
+                        ElseIf sheet2.Cells(index5, 1).value = movimientos(index2) Then
+
+                            existen(index2) = True
+
+                        ElseIf sheet2.cells(index5, 1).value = Nothing Then
+
+                            Exit For
+
+                        End If
+
+                    Next
 
                 Next
 
             Next
+
+            ''workbook.Save()
+
+            workbook.Close()
+            workbook = Nothing
+
+            excel.Workbooks.Close()
 
         Next
 
@@ -845,19 +896,17 @@ Public Class Form1
 
         Next
 
-        If pokemons.Trim <> "" Then
+        '''If pokemons.Trim <> "" Then
 
-            My.Computer.FileSystem.WriteAllText("C:\Users\oxikr\source\repos\monster-Feudal\DB\Tablas de aprendizaje de movimientos\Terminadas\erroresPokes.txt", pokemons, False)
+        '''    My.Computer.FileSystem.WriteAllText("C:\Users\oxikr\source\repos\monster-Feudal\DB\Tablas de aprendizaje de movimientos\Terminadas\erroresPokes.txt", pokemons, False)
 
-        End If
+        '''End If
 
         If errores.Trim <> "" Then
 
             My.Computer.FileSystem.WriteAllText("C:\Users\oxikr\source\repos\monster-Feudal\DB\Tablas de aprendizaje de movimientos\Terminadas\errores.txt", errores, False)
 
         End If
-
-        MsgBox("fin")
 
     End Sub
 End Class

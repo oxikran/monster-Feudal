@@ -44,12 +44,13 @@ Partial Class Form1
         Me.reemplazo = New System.Windows.Forms.Button()
         Me.Carpeta = New System.Windows.Forms.Button()
         Me.CarpetaText = New System.Windows.Forms.TextBox()
+        Me.compBut = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'rutaApi
         '
         Me.rutaApi.Location = New System.Drawing.Point(21, 16)
-        Me.rutaApi.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.rutaApi.Margin = New System.Windows.Forms.Padding(2)
         Me.rutaApi.Name = "rutaApi"
         Me.rutaApi.Size = New System.Drawing.Size(481, 20)
         Me.rutaApi.TabIndex = 0
@@ -57,7 +58,7 @@ Partial Class Form1
         'apiBut
         '
         Me.apiBut.Location = New System.Drawing.Point(506, 13)
-        Me.apiBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.apiBut.Margin = New System.Windows.Forms.Padding(2)
         Me.apiBut.Name = "apiBut"
         Me.apiBut.Size = New System.Drawing.Size(18, 24)
         Me.apiBut.TabIndex = 1
@@ -67,7 +68,7 @@ Partial Class Form1
         'excelText
         '
         Me.excelText.Location = New System.Drawing.Point(21, 53)
-        Me.excelText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.excelText.Margin = New System.Windows.Forms.Padding(2)
         Me.excelText.Name = "excelText"
         Me.excelText.Size = New System.Drawing.Size(481, 20)
         Me.excelText.TabIndex = 2
@@ -75,7 +76,7 @@ Partial Class Form1
         'ExcelBut
         '
         Me.ExcelBut.Location = New System.Drawing.Point(506, 50)
-        Me.ExcelBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ExcelBut.Margin = New System.Windows.Forms.Padding(2)
         Me.ExcelBut.Name = "ExcelBut"
         Me.ExcelBut.Size = New System.Drawing.Size(18, 24)
         Me.ExcelBut.TabIndex = 3
@@ -85,7 +86,7 @@ Partial Class Form1
         'comenzarBut
         '
         Me.comenzarBut.Location = New System.Drawing.Point(21, 285)
-        Me.comenzarBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.comenzarBut.Margin = New System.Windows.Forms.Padding(2)
         Me.comenzarBut.Name = "comenzarBut"
         Me.comenzarBut.Size = New System.Drawing.Size(270, 40)
         Me.comenzarBut.TabIndex = 4
@@ -95,7 +96,7 @@ Partial Class Form1
         'movText
         '
         Me.movText.Location = New System.Drawing.Point(21, 89)
-        Me.movText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.movText.Margin = New System.Windows.Forms.Padding(2)
         Me.movText.Name = "movText"
         Me.movText.Size = New System.Drawing.Size(481, 20)
         Me.movText.TabIndex = 5
@@ -103,7 +104,7 @@ Partial Class Form1
         'moviminetosBut
         '
         Me.moviminetosBut.Location = New System.Drawing.Point(506, 89)
-        Me.moviminetosBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.moviminetosBut.Margin = New System.Windows.Forms.Padding(2)
         Me.moviminetosBut.Name = "moviminetosBut"
         Me.moviminetosBut.Size = New System.Drawing.Size(18, 24)
         Me.moviminetosBut.TabIndex = 6
@@ -113,7 +114,7 @@ Partial Class Form1
         'SeguirBut
         '
         Me.SeguirBut.Location = New System.Drawing.Point(321, 285)
-        Me.SeguirBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SeguirBut.Margin = New System.Windows.Forms.Padding(2)
         Me.SeguirBut.Name = "SeguirBut"
         Me.SeguirBut.Size = New System.Drawing.Size(270, 40)
         Me.SeguirBut.TabIndex = 7
@@ -123,7 +124,7 @@ Partial Class Form1
         'terceraBut
         '
         Me.terceraBut.Location = New System.Drawing.Point(21, 330)
-        Me.terceraBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.terceraBut.Margin = New System.Windows.Forms.Padding(2)
         Me.terceraBut.Name = "terceraBut"
         Me.terceraBut.Size = New System.Drawing.Size(270, 40)
         Me.terceraBut.TabIndex = 8
@@ -133,7 +134,7 @@ Partial Class Form1
         'CuartaBut
         '
         Me.CuartaBut.Location = New System.Drawing.Point(321, 330)
-        Me.CuartaBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CuartaBut.Margin = New System.Windows.Forms.Padding(2)
         Me.CuartaBut.Name = "CuartaBut"
         Me.CuartaBut.Size = New System.Drawing.Size(270, 40)
         Me.CuartaBut.TabIndex = 9
@@ -143,7 +144,7 @@ Partial Class Form1
         'eternoText
         '
         Me.eternoText.Location = New System.Drawing.Point(21, 121)
-        Me.eternoText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.eternoText.Margin = New System.Windows.Forms.Padding(2)
         Me.eternoText.Name = "eternoText"
         Me.eternoText.Size = New System.Drawing.Size(481, 20)
         Me.eternoText.TabIndex = 10
@@ -151,7 +152,7 @@ Partial Class Form1
         'EternoBut
         '
         Me.EternoBut.Location = New System.Drawing.Point(506, 118)
-        Me.EternoBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EternoBut.Margin = New System.Windows.Forms.Padding(2)
         Me.EternoBut.Name = "EternoBut"
         Me.EternoBut.Size = New System.Drawing.Size(18, 24)
         Me.EternoBut.TabIndex = 11
@@ -161,7 +162,7 @@ Partial Class Form1
         'metaText
         '
         Me.metaText.Location = New System.Drawing.Point(21, 151)
-        Me.metaText.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.metaText.Margin = New System.Windows.Forms.Padding(2)
         Me.metaText.Name = "metaText"
         Me.metaText.Size = New System.Drawing.Size(481, 20)
         Me.metaText.TabIndex = 12
@@ -169,7 +170,7 @@ Partial Class Form1
         'metaBut
         '
         Me.metaBut.Location = New System.Drawing.Point(506, 151)
-        Me.metaBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.metaBut.Margin = New System.Windows.Forms.Padding(2)
         Me.metaBut.Name = "metaBut"
         Me.metaBut.Size = New System.Drawing.Size(18, 24)
         Me.metaBut.TabIndex = 13
@@ -179,7 +180,7 @@ Partial Class Form1
         'QuinBut
         '
         Me.QuinBut.Location = New System.Drawing.Point(21, 375)
-        Me.QuinBut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.QuinBut.Margin = New System.Windows.Forms.Padding(2)
         Me.QuinBut.Name = "QuinBut"
         Me.QuinBut.Size = New System.Drawing.Size(270, 40)
         Me.QuinBut.TabIndex = 14
@@ -190,7 +191,7 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(321, 375)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(270, 40)
         Me.Button1.TabIndex = 15
@@ -201,7 +202,7 @@ Partial Class Form1
         'PrimeButton
         '
         Me.PrimeButton.Location = New System.Drawing.Point(21, 419)
-        Me.PrimeButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PrimeButton.Margin = New System.Windows.Forms.Padding(2)
         Me.PrimeButton.Name = "PrimeButton"
         Me.PrimeButton.Size = New System.Drawing.Size(270, 40)
         Me.PrimeButton.TabIndex = 16
@@ -212,7 +213,7 @@ Partial Class Form1
         'Codigo
         '
         Me.Codigo.Location = New System.Drawing.Point(21, 183)
-        Me.Codigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Codigo.Margin = New System.Windows.Forms.Padding(2)
         Me.Codigo.Name = "Codigo"
         Me.Codigo.Size = New System.Drawing.Size(481, 20)
         Me.Codigo.TabIndex = 17
@@ -220,7 +221,7 @@ Partial Class Form1
         'Buscar
         '
         Me.Buscar.Location = New System.Drawing.Point(321, 419)
-        Me.Buscar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Buscar.Margin = New System.Windows.Forms.Padding(2)
         Me.Buscar.Name = "Buscar"
         Me.Buscar.Size = New System.Drawing.Size(270, 40)
         Me.Buscar.TabIndex = 18
@@ -257,11 +258,23 @@ Partial Class Form1
         Me.CarpetaText.Size = New System.Drawing.Size(481, 20)
         Me.CarpetaText.TabIndex = 20
         '
+        'compBut
+        '
+        Me.compBut.Location = New System.Drawing.Point(321, 463)
+        Me.compBut.Margin = New System.Windows.Forms.Padding(2)
+        Me.compBut.Name = "compBut"
+        Me.compBut.Size = New System.Drawing.Size(270, 40)
+        Me.compBut.TabIndex = 22
+        Me.compBut.Text = "Comprobar"
+        Me.compBut.UseMnemonic = False
+        Me.compBut.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 589)
+        Me.Controls.Add(Me.compBut)
         Me.Controls.Add(Me.Carpeta)
         Me.Controls.Add(Me.CarpetaText)
         Me.Controls.Add(Me.reemplazo)
@@ -284,7 +297,7 @@ Partial Class Form1
         Me.Controls.Add(Me.excelText)
         Me.Controls.Add(Me.apiBut)
         Me.Controls.Add(Me.rutaApi)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -314,4 +327,5 @@ Partial Class Form1
     Friend WithEvents reemplazo As Button
     Friend WithEvents Carpeta As Button
     Friend WithEvents CarpetaText As TextBox
+    Friend WithEvents compBut As Button
 End Class
