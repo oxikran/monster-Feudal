@@ -3,3 +3,9 @@ C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\bin\Release\armox
 C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.dll
 C:\Users\Usuario\Source\Repos\monster Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.pdb
+C:\Users\oxikr\source\repos\monster-Feudal\armoxiDB\armoxiDB\bin\Release\armoxiDB.dll
+C:\Users\oxikr\source\repos\monster-Feudal\armoxiDB\armoxiDB\bin\Release\armoxiDB.pdb
+C:\Users\oxikr\source\repos\monster-Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.csprojAssemblyReference.cache
+C:\Users\oxikr\source\repos\monster-Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.csproj.CoreCompileInputs.cache
+C:\Users\oxikr\source\repos\monster-Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.dll
+C:\Users\oxikr\source\repos\monster-Feudal\armoxiDB\armoxiDB\obj\Release\armoxiDB.pdb

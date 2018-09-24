@@ -45,6 +45,7 @@ Partial Class Form1
         Me.Carpeta = New System.Windows.Forms.Button()
         Me.CarpetaText = New System.Windows.Forms.TextBox()
         Me.compBut = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'rutaApi
@@ -269,11 +270,22 @@ Partial Class Form1
         Me.compBut.UseMnemonic = False
         Me.compBut.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(174, 507)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(270, 40)
+        Me.Button2.TabIndex = 23
+        Me.Button2.Text = "Clave"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 589)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.compBut)
         Me.Controls.Add(Me.Carpeta)
         Me.Controls.Add(Me.CarpetaText)
@@ -328,4 +340,5 @@ Partial Class Form1
     Friend WithEvents Carpeta As Button
     Friend WithEvents CarpetaText As TextBox
     Friend WithEvents compBut As Button
+    Friend WithEvents Button2 As Button
 End Class

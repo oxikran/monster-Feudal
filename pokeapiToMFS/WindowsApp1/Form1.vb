@@ -909,4 +909,12 @@ Public Class Form1
         End If
 
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Dim DB As New aramoxi
+
+        MsgBox(DB.kripto(""))
+
+    End Sub
 End Class
