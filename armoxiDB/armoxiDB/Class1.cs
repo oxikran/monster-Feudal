@@ -21,8 +21,9 @@ namespace armoxiDB
         String rutaT;
         String Clave;
 
-        public aramoxi(){
-            
+        public aramoxi()
+        {
+
 
         }
 
@@ -32,13 +33,13 @@ namespace armoxiDB
 
             //try
             //{
-                Archivo = Unkrypto(File.ReadAllText(BD + ".axdb"));
-                CargaInfo();
-                return 2;
+            Archivo = Unkrypto(File.ReadAllText(BD + ".axdb"));
+            CargaInfo();
+            return 2;
             //}
             //catch{
 
-                //return 1;
+            //return 1;
 
             //}
         }
@@ -65,9 +66,10 @@ namespace armoxiDB
 
                 File.AppendAllText(rutaT + ".axid", Clave + "," + nombreCampo + "," + Longitud + "|");
 
-            return 1;
+                return 1;
 
-            }catch
+            }
+            catch
             {
 
                 return 2;
@@ -75,7 +77,7 @@ namespace armoxiDB
         }
 
 
-        public void edit(int field,String Data)
+        public void edit(int field, String Data)
         {
             String[] aux;
             int inicio;
@@ -106,7 +108,7 @@ namespace armoxiDB
 
             int index = 0;
 
-            for(index = 0;index < actual.Length; index++)
+            for (index = 0; index < actual.Length; index++)
             {
 
                 activo = activo + actual[index];
@@ -124,24 +126,24 @@ namespace armoxiDB
         private void MoveLastestToFill()
         {
 
-            Array.Resize(ref Archivo, Archivo.Length +1 );
+            Array.Resize(ref Archivo, Archivo.Length + 1);
 
 
-           
-            
 
-                //activo = Filtro[Filtro.Length - 1];
 
-                registro = Archivo.Length - 1;
 
-           
+            //activo = Filtro[Filtro.Length - 1];
+
+            registro = Archivo.Length - 1;
+
+
 
         }
 
         public int recordCount()
         {
 
-           
+
 
             return Filtro.Length;
 
@@ -157,13 +159,13 @@ namespace armoxiDB
             inicio = 0;
             salida = "";
 
-            
 
-            for(int index = 0 ; index < num ; index ++)
+
+            for (int index = 0; index < num; index++)
             {
 
                 aux = Campos[index].Split(Convert.ToChar(","));
-                
+
                 inicio += Convert.ToInt16(aux[2]);
 
 
@@ -172,13 +174,13 @@ namespace armoxiDB
 
             aux = Campos[num].Split(Convert.ToChar(","));
 
-            salida = activo.Substring(inicio, Convert.ToInt16(aux[2])); 
+            salida = activo.Substring(inicio, Convert.ToInt16(aux[2]));
 
             return salida;
 
         }
 
-        public void addData(int key,String data)
+        public void addData(int key, String data)
         {
 
             CargaInfo();
@@ -196,20 +198,21 @@ namespace armoxiDB
 
             }
 
-            for(index = 0;index <= Campos.Length -1; index++)
+            for (index = 0; index <= Campos.Length - 1; index++)
             {
 
                 aux = Campos[index].Split(Convert.ToChar(","));
 
                 if (aux[0] == Convert.ToString(key))
                 {
-                    if( data.Length <= Convert.ToInt16(aux[2]))
+                    if (data.Length <= Convert.ToInt16(aux[2]))
                     {
 
                         datos = data.PadRight(Convert.ToInt16(aux[2]));
 
                     }
-                    else {
+                    else
+                    {
 
                         datos = data.Substring(0, Convert.ToInt16(aux[2]));
 
@@ -239,31 +242,35 @@ namespace armoxiDB
         public int createBD(String ruta, String nombredb)
         {
 
-            
 
-            try { 
 
-            if (File.Exists(ruta)){
+            try
+            {
+
+                if (File.Exists(ruta))
+                {
 
                     return 1;
 
-            }else
-            {
+                }
+                else
+                {
 
-                File.Create(ruta +  nombredb + ".axdb").Close();
-                    
+                    File.Create(ruta + nombredb + ".axdb").Close();
+
                     return 2;
 
-            }
+                }
 
-            } catch
+            }
+            catch
             {
 
                 return 3;
-                
+
             }
 
-            
+
         }
 
         public String[] getindex()
@@ -273,9 +280,10 @@ namespace armoxiDB
 
             Output = "".Split(Convert.ToChar("."));
 
-            try {
+            try
+            {
 
-            Output = Convert.ToString(File.ReadAllText(rutaT + ".axid")).Split(Convert.ToChar("|"));
+                Output = Convert.ToString(File.ReadAllText(rutaT + ".axid")).Split(Convert.ToChar("|"));
 
 
                 return Output;
@@ -285,12 +293,13 @@ namespace armoxiDB
             {
                 return Output;
             }
-            finally {
+            finally
+            {
 
-            
+
 
             }
-            
+
 
         }
 
@@ -306,8 +315,8 @@ namespace armoxiDB
             String[] aux;
             String[] Claves = getindex();
             long index = 0;
-            
-            for (index =0 ; index <= Claves.LongLength;index++)
+
+            for (index = 0; index <= Claves.LongLength; index++)
             {
 
                 aux = Claves[index].Split(Convert.ToChar(","));
@@ -318,7 +327,7 @@ namespace armoxiDB
 
                     break;
 
-                } 
+                }
             }
 
             grabarindices(Claves);
@@ -337,8 +346,8 @@ namespace armoxiDB
             Array.Clear(Filtro, 0, Filtro.Length);
             activo = "";
             registro = 0;
-            Array.Clear(Campos ,0, Campos.Length);
-            Array.Clear(Archivo,0, Archivo.Length);
+            Array.Clear(Campos, 0, Campos.Length);
+            Array.Clear(Archivo, 0, Archivo.Length);
             rutaT = "";
 
         }
@@ -353,14 +362,15 @@ namespace armoxiDB
 
             index = 0;
 
-            
 
-            for(index = 0; index <= Archivo.LongLength -1 ;index ++)
+
+            for (index = 0; index <= Archivo.LongLength - 1; index++)
             {
 
                 if (Archivo[index] == "") { }
-                else { 
-                grabar = grabar + Krypto(Archivo[index]) + "€";
+                else
+                {
+                    grabar = grabar + Krypto(Archivo[index]) + "€";
                 }
             }
 
@@ -392,7 +402,8 @@ namespace armoxiDB
         {
 
 
-            if (Filtro == null){
+            if (Filtro == null)
+            {
 
                 Filtro = Archivo;
 
@@ -401,7 +412,7 @@ namespace armoxiDB
                 registro = 0;
 
             }
-            else if (Filtro.Length > 0 )
+            else if (Filtro.Length > 0)
             {
 
                 activo = Filtro[0];
@@ -438,12 +449,12 @@ namespace armoxiDB
                 registro = Filtro.Length - 1;
 
             }
-            else if(Filtro.Length > 0)
+            else if (Filtro.Length > 0)
             {
 
-                activo = Filtro[Filtro.Length-1];
+                activo = Filtro[Filtro.Length - 1];
 
-                registro = Filtro.Length -1;
+                registro = Filtro.Length - 1;
 
             }
             else
@@ -501,14 +512,15 @@ namespace armoxiDB
 
         private int grabarindices(string[] claves)
         {
-            try{
+            try
+            {
 
                 int index;
 
-                for (index = 0; index <= claves.LongLength;index++)
+                for (index = 0; index <= claves.LongLength; index++)
                 {
 
-                    if( claves[index] != "")
+                    if (claves[index] != "")
                     {
 
                         File.AppendAllText(rutaT + ".axid", claves[index] + "|");
@@ -534,7 +546,7 @@ namespace armoxiDB
             Output = "";
             size = Input.Length;
 
-            for(index=0; index <= size -1 ; index++)
+            for (index = 0; index <= size - 1; index++)
             {
 
                 if (index == size)
@@ -570,29 +582,32 @@ namespace armoxiDB
 
             temp = "";
 
-            if (Input.Length == 0){
+            if (Input.Length == 0)
+            {
 
                 Output = "4".Split(Convert.ToChar("4"));
 
-            }  else
+            }
+            else
             {
 
                 Output = Input.Split(retorno);
 
-                for (index = 0;index <= Output.LongLength -1; index ++)
+                for (index = 0; index <= Output.LongLength - 1; index++)
                 {
 
                     aux = Output[index].Split(separador);
                     temp = "";
 
-                    for (index2 = 0; index2 <= aux.LongLength -1; index2 ++)
+                    for (index2 = 0; index2 <= aux.LongLength - 1; index2++)
                     {
 
                         if (aux[index2] == "")
                         {
 
                         }
-                        else{ 
+                        else
+                        {
                             temp = temp + Convert.ToString(char.ConvertFromUtf32(Convert.ToChar(Convert.ToInt16(aux[index2]) / 8)));
 
                         }
@@ -606,10 +621,11 @@ namespace armoxiDB
 
 
                     }
-                    else {
+                    else
+                    {
 
                         Output[index] = temp;
-                        
+
                     }
 
 
@@ -634,7 +650,7 @@ namespace armoxiDB
 
             }
 
-           
+
 
             return Output;
         }
@@ -645,22 +661,57 @@ namespace armoxiDB
         {
 
             String random = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ ";
-            String[] aleatorio = new string[random.Length];
+            String[] abecedario = new string[random.Length];
+            string output = "";
             int x = 0;
-            Random r = new Random();
-            int lugar;
 
 
             foreach (char c in random)
             {
 
-                aleatorio[x] = Convert.ToString(c);
-
+                abecedario[x] = Convert.ToString(c);
                 x += 1;
 
             }
 
-            for (x = 0; x <= aleatorio.Length -1 ; x++)
+            if (Clave == "" || Clave == null)
+            {
+
+                generaClave(abecedario);
+
+            }
+
+            for (int index2 = 0; index2 <= input.Length - 1; index2++)
+            {
+
+                for (int index3 = 0; index3 <= abecedario.Length; index3++)
+                {
+
+                    if (input.Substring(index2, 1) == abecedario[index3])
+                    {
+
+                        output = output + Clave.Substring(index3, 1);
+
+                        break;
+
+                    }
+
+                }
+
+            }
+
+            return output;
+
+        }
+
+        private void generaClave(string[] aleatorio)
+        {
+
+            int x = 0;
+            Random r = new Random();
+            int lugar;
+
+            for (x = 0; x <= aleatorio.Length; x++)
             {
 
                 lugar = r.Next(0, aleatorio.Length);
@@ -670,21 +721,17 @@ namespace armoxiDB
 
                     Clave = Clave + aleatorio[lugar];
 
-                    aleatorio[lugar] = "~";
-
                 }
                 else
                 {
 
-                    for (int index = 0; index <= aleatorio.Length -1 ; index++)
+                    for (int index = 0; index <= aleatorio.Length; index++)
                     {
 
                         if (aleatorio[index] != "~")
                         {
 
                             Clave = Clave + aleatorio[index];
-
-                            aleatorio[index] = "~";
 
                             break;
 
@@ -695,10 +742,6 @@ namespace armoxiDB
                 }
 
             }
-
-            return Clave;
-
         }
-
     }
 }

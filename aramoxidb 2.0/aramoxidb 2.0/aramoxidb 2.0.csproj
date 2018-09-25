@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{40A58E17-402C-455C-9D9B-E61B795DA539}</ProjectGuid>
+    <ProjectGuid>{A887D305-A3B7-4579-A8A4-92D6B415D7EC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>aramoxi_2._0</RootNamespace>
-    <AssemblyName>aramoxi 2.0</AssemblyName>
+    <RootNamespace>aramoxidb_2._0</RootNamespace>
+    <AssemblyName>aramoxidb 2.0</AssemblyName>
     <DefaultLanguage>es-ES</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
@@ -108,7 +108,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\aramoxi_2._0.rd.xml" />
+    <EmbeddedResource Include="Properties\aramoxidb_2._0.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">

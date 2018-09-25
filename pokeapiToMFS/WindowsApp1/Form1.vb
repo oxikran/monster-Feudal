@@ -914,7 +914,7 @@ Public Class Form1
 
         Dim DB As New aramoxi
 
-        MsgBox(DB.kripto(""))
+        MsgBox(DB.kripto(ecripta.Text))
 
     End Sub
 End Class

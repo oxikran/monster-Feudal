@@ -46,6 +46,7 @@ Partial Class Form1
         Me.CarpetaText = New System.Windows.Forms.TextBox()
         Me.compBut = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.ecripta = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'rutaApi
@@ -280,11 +281,20 @@ Partial Class Form1
         Me.Button2.Text = "Clave"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'ecripta
+        '
+        Me.ecripta.Location = New System.Drawing.Point(21, 235)
+        Me.ecripta.Margin = New System.Windows.Forms.Padding(2)
+        Me.ecripta.Name = "ecripta"
+        Me.ecripta.Size = New System.Drawing.Size(481, 20)
+        Me.ecripta.TabIndex = 24
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 589)
+        Me.Controls.Add(Me.ecripta)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.compBut)
         Me.Controls.Add(Me.Carpeta)
@@ -341,4 +351,5 @@ Partial Class Form1
     Friend WithEvents CarpetaText As TextBox
     Friend WithEvents compBut As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents ecripta As TextBox
 End Class
