@@ -656,11 +656,59 @@ namespace armoxiDB
         }
 
 
+        public String Unkripto(String input)
+        {
+
+            String orden = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ€ ";
+            String[] abecedario = new string[Clave.Length];
+            String output = "";
+            int x = 0;
+            int index = 0;
+
+            foreach (char c in Clave)
+            {
+
+                abecedario[x] = Convert.ToString(c);
+                x += 1;
+
+            }
+
+            x = 0;
+
+            foreach (char d in input)
+            {
+
+                for (index = 0; index <= orden.Length; index++)
+                {
+
+                    if (Convert.ToString(d) == abecedario[index])
+                    {
+
+                        output += orden.Substring(index, 1);
+                        break;
+
+                    }
+
+                }
+
+            }
+
+            return output;
+
+        }
+
+
+        public String getClave()
+        {
+
+            return Clave;
+
+        }
 
         public String kripto(String input)
         {
 
-            String random = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ ";
+            String random = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ€ ";
             String[] abecedario = new string[random.Length];
             string output = "";
             int x = 0;
@@ -681,10 +729,24 @@ namespace armoxiDB
 
             }
 
+            x = 0;
+
+            foreach (char c in random)
+            {
+
+                abecedario[x] = Convert.ToString(c);
+                
+
+                x += 1;
+                    
+              
+
+            }
+
             for (int index2 = 0; index2 <= input.Length - 1; index2++)
             {
 
-                for (int index3 = 0; index3 <= abecedario.Length; index3++)
+                for (int index3 = 0; index3 <= abecedario.Length -1 ; index3++)
                 {
 
                     if (input.Substring(index2, 1) == abecedario[index3])
@@ -711,27 +773,31 @@ namespace armoxiDB
             Random r = new Random();
             int lugar;
 
-            for (x = 0; x <= aleatorio.Length; x++)
+            for (x = 0; x <= aleatorio.Length -1; x++)
             {
 
-                lugar = r.Next(0, aleatorio.Length);
+                lugar = r.Next(0, aleatorio.Length -1);
 
                 if (aleatorio[lugar] != "~")
                 {
 
                     Clave = Clave + aleatorio[lugar];
 
+                    aleatorio[lugar] = "~";
+
                 }
                 else
                 {
 
-                    for (int index = 0; index <= aleatorio.Length; index++)
+                    for (int index = 0; index <= aleatorio.Length -1; index++)
                     {
 
                         if (aleatorio[index] != "~")
                         {
 
                             Clave = Clave + aleatorio[index];
+
+                            aleatorio[index] = "~";
 
                             break;
 

@@ -913,8 +913,17 @@ Public Class Form1
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
         Dim DB As New aramoxi
+        Dim s As String
 
-        MsgBox(DB.kripto(ecripta.Text))
+        s = DB.kripto(ecripta.Text)
+
+        MsgBox(s)
+
+        MsgBox(DB.getClave)
+
+        s = DB.Unkripto(s)
+
+        MsgBox(s)
 
     End Sub
 End Class
