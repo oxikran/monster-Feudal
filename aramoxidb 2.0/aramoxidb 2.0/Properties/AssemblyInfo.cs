@@ -2,28 +2,35 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-[assembly: AssemblyTitle("aramoxidb 2.0")]
+// La información general de un ensamblado se controla mediante el siguiente 
+// conjunto de atributos. Cambie estos valores de atributo para modificar la información
+// asociada con un ensamblado.
+[assembly: AssemblyTitle("Aramoxidb 2.0")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("aramoxidb 2.0")]
+[assembly: AssemblyProduct("Aramoxidb 2.0")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// Version information for an assembly consists of the following four values:
+// Si establece ComVisible en false, los tipos de este ensamblado no estarán visibles 
+// para los componentes COM.  Si es necesario obtener acceso a un tipo en este ensamblado desde 
+// COM, establezca el atributo ComVisible en true en este tipo.
+[assembly: ComVisible(false)]
+
+// El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
+[assembly: Guid("3c6d920e-b57d-4c12-9b29-268a30b328f2")]
+
+// La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
+//      Versión principal
+//      Versión secundaria
+//      Número de compilación
+//      Revisión
 //
-// You can specify all the values or you can default the Build and Revision Numbers 
-// by using the '*' as shown below:
+// Puede especificar todos los valores o usar los números de compilación y de revisión predeterminados
+// mediante el carácter "*", como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: ComVisible(false)]

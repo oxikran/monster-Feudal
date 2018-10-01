@@ -31,7 +31,7 @@ namespace aramoxi_2._0
 
                 File.WriteAllText(ruta + "Data.txt", archivoCargado[3]);
                 File.WriteAllText(ruta + "Index.txt", archivoCargado[2]);
-                File.WriteAllText(ruta + "cab.txt",archivoCargado[1]);
+                File.WriteAllText(ruta + "cab.txt", archivoCargado[1]);
 
                 Array.Clear(archivoCargado, 0, 4);
 
@@ -42,8 +42,24 @@ namespace aramoxi_2._0
 
         public string find(int id)
         {
+            String[] aux;
+            long len = 0;
+            long index = 0;
+
+            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab.txt")).Split(Convert.ToChar("€"));
+
+            for(index=0;index < archivoCargado.Length;index++)
+            {
+
+                aux = archivoCargado[index].Split(Convert.ToChar("|"));
+
+                len += Convert.ToInt16(aux[2]);
+
+            }
 
             archivoCargado = Unkripto(File.ReadAllText(ruta + "Index.txt")).Split(Convert.ToChar("€"));
+
+
 
             return "";
 
@@ -52,7 +68,7 @@ namespace aramoxi_2._0
         public String Unkripto(String input)
         {
 
-            String orden = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ€ ";
+            String orden = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ|€ ";
             String[] abecedario = new string[Clave.Length];
             String output = "";
             int x = 0;
@@ -101,7 +117,7 @@ namespace aramoxi_2._0
         public String kripto(String input)
         {
 
-            String random = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ€ ";
+            String random = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ|€ ";
             String[] abecedario = new string[random.Length];
             string output = "";
             int x = 0;
@@ -211,7 +227,7 @@ namespace aramoxi_2._0
 
             separado = archivo.Split(Convert.ToChar("\\"));
 
-            for(index=0; index < separado.Length - 1; index++)
+            for (index = 0; index < separado.Length - 1; index++)
             {
 
                 output += archivo[index] + "\\";
@@ -223,3 +239,4 @@ namespace aramoxi_2._0
         }
     }
 }
+
