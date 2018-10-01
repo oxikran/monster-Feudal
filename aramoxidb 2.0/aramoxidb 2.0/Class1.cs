@@ -13,6 +13,7 @@ namespace aramoxi_2._0
         String[] archivoCargado;
         String Clave;
         String ruta;
+        String active;
 
         public void OpenDB(String archivo)
         {
@@ -40,11 +41,12 @@ namespace aramoxi_2._0
 
         }
 
-        public string find(int id)
+        public void findbyid(int id)
         {
             String[] aux;
-            long len = 0;
+            int len = 0;
             long index = 0;
+            String output = "";
 
             archivoCargado = Unkripto(File.ReadAllText(ruta + "cab.txt")).Split(Convert.ToChar("€"));
 
@@ -59,7 +61,27 @@ namespace aramoxi_2._0
 
             archivoCargado = Unkripto(File.ReadAllText(ruta + "Index.txt")).Split(Convert.ToChar("€"));
 
+            for (index = 0; index < archivoCargado.Length; index++)
+            {
 
+                aux = archivoCargado[index].Split(Convert.ToChar("|"));
+
+                if(Convert.ToString(id) == aux[0])
+                {
+
+                    output = Unkripto(File.ReadAllText(ruta + "Data.txt")).Substring(Convert.ToInt32(aux[1]),len);
+
+                    break;
+                }
+
+            }
+
+            active = output;
+
+        }
+
+        public String oxifield(String num)
+        {
 
             return "";
 
