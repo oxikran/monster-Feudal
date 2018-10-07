@@ -76,6 +76,8 @@ namespace aramoxi_2._0
 
             }
 
+            Array.Clear(archivoCargado,1,archivoCargado.Length);
+
             active = output;
 
         }
@@ -83,7 +85,38 @@ namespace aramoxi_2._0
         public String oxifield(String num)
         {
 
-            return "";
+            String[] aux;
+            int index = 0;
+            int inicio = 0;
+            int final = 0;
+            String output;
+            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab.txt")).Split(Convert.ToChar("€"));
+
+            for(index =0;index < Convert.ToInt32(num);index++)
+            {
+
+                aux = archivoCargado[index].Split(Convert.ToChar("|"));
+
+                if (index == Convert.ToInt32(num) - 1)
+                {
+
+                    final = inicio + Convert.ToInt32(aux[2]);
+
+                }
+                else
+                {
+
+                    inicio = inicio + Convert.ToInt32(aux[2]);
+
+                }
+                                
+            }
+
+            Array.Clear(archivoCargado,0,archivoCargado.Length);
+
+            output = active.Substring(inicio, final);
+                     
+            return output;
 
         }
 
