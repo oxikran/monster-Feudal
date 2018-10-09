@@ -15,6 +15,8 @@ namespace aramoxi_2._0
         String ruta;
         String active;
 
+        String nArch;
+
         public void OpenDB(String archivo)
         {
 
@@ -23,6 +25,8 @@ namespace aramoxi_2._0
 
             ruta = separar(archivo);
 
+            nArch = separar2(archivo);
+
             if (File.Exists(archivo))
             {
 
@@ -30,15 +34,22 @@ namespace aramoxi_2._0
 
                 Clave = archivoCargado[0];
 
-                File.WriteAllText(ruta + "Data.txt", archivoCargado[3]);
-                File.WriteAllText(ruta + "Index.txt", archivoCargado[2]);
-                File.WriteAllText(ruta + "cab.txt", archivoCargado[1]);
+                File.WriteAllText(ruta + "Data" + nArch + ".txt", archivoCargado[3]);
+                File.WriteAllText(ruta + "Index."+nArch+"txt", archivoCargado[2]);
+                File.WriteAllText(ruta + "cab."+ nArch +"txt", archivoCargado[1]);
 
                 Array.Clear(archivoCargado, 0, 4);
 
             }
 
 
+        }
+
+        public void CrearCabeceras(String Cabeceras)
+        {
+
+            File.WriteAllText(ruta + "cab."+nArch+"txt","");
+            
         }
 
         public void findbyid(int id)
@@ -48,7 +59,7 @@ namespace aramoxi_2._0
             long index = 0;
             String output = "";
 
-            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab.txt")).Split(Convert.ToChar("€"));
+            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab."+nArch+"txt")).Split(Convert.ToChar("€"));
 
             for(index=0;index < archivoCargado.Length;index++)
             {
@@ -59,7 +70,7 @@ namespace aramoxi_2._0
 
             }
 
-            archivoCargado = Unkripto(File.ReadAllText(ruta + "Index.txt")).Split(Convert.ToChar("€"));
+            archivoCargado = Unkripto(File.ReadAllText(ruta + "Index"+nArch+".txt")).Split(Convert.ToChar("€"));
 
             for (index = 0; index < archivoCargado.Length; index++)
             {
@@ -69,7 +80,7 @@ namespace aramoxi_2._0
                 if(Convert.ToString(id) == aux[0])
                 {
 
-                    output = Unkripto(File.ReadAllText(ruta + "Data.txt")).Substring(Convert.ToInt32(aux[1]),len);
+                    output = Unkripto(File.ReadAllText(ruta + "Data."+nArch+"txt")).Substring(Convert.ToInt32(aux[1]),len);
 
                     break;
                 }
@@ -90,7 +101,7 @@ namespace aramoxi_2._0
             int inicio = 0;
             int final = 0;
             String output;
-            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab.txt")).Split(Convert.ToChar("€"));
+            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab"+nArch+".txt")).Split(Convert.ToChar("€"));
 
             for(index =0;index < Convert.ToInt32(num);index++)
             {
@@ -290,6 +301,16 @@ namespace aramoxi_2._0
             }
 
             return output;
+
+        }
+        private string separar2(string archivo)
+        {
+            String output = "";
+            String[] separado;
+            int index = 0;
+
+            separado = archivo.Split(Convert.ToChar("\\"));
+            return separado[separado.Length];
 
         }
     }
