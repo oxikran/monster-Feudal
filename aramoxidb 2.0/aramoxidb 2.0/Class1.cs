@@ -35,8 +35,8 @@ namespace aramoxi_2._0
                 Clave = archivoCargado[0];
 
                 File.WriteAllText(ruta + "Data" + nArch + ".txt", archivoCargado[3]);
-                File.WriteAllText(ruta + "Index."+nArch+"txt", archivoCargado[2]);
-                File.WriteAllText(ruta + "cab."+ nArch +"txt", archivoCargado[1]);
+                File.WriteAllText(ruta + "Index." + nArch + "txt", archivoCargado[2]);
+                File.WriteAllText(ruta + "cab." + nArch + "txt", archivoCargado[1]);
 
                 Array.Clear(archivoCargado, 0, 4);
 
@@ -47,9 +47,22 @@ namespace aramoxi_2._0
 
         public void CrearCabeceras(String Cabeceras)
         {
-
-            File.WriteAllText(ruta + "cab."+nArch+"txt","");
+                       
+            File.WriteAllText(ruta + "cab." + nArch + "txt",kripto(Cabeceras)); 
             
+        }
+
+        public void addCabecera(String Cabecera)
+        {
+
+            String cab;
+
+            cab = Unkripto(File.ReadAllText(ruta + "cab." + nArch + "txt"));
+
+            cab = cab + Cabecera;
+
+            File.WriteAllText(ruta + "cab." + nArch + "txt", kripto(cab));
+
         }
 
         public void findbyid(int id)
