@@ -14,7 +14,8 @@ namespace aramoxi_2._0
         String Clave;
         String ruta;
         String active;
-
+        int ancho;
+        int indactivo;
         String nArch;
 
         public void OpenDB(String archivo)
@@ -35,8 +36,8 @@ namespace aramoxi_2._0
                 Clave = archivoCargado[0];
 
                 File.WriteAllText(ruta + "Data" + nArch + ".txt", archivoCargado[3]);
-                File.WriteAllText(ruta + "Index." + nArch + "txt", archivoCargado[2]);
-                File.WriteAllText(ruta + "cab." + nArch + "txt", archivoCargado[1]);
+                File.WriteAllText(ruta + "Index" + nArch + ".txt", archivoCargado[2]);
+                File.WriteAllText(ruta + "cab" + nArch + ".txt", archivoCargado[1]);
 
                 Array.Clear(archivoCargado, 0, 4);
 
@@ -48,7 +49,7 @@ namespace aramoxi_2._0
         public void CrearCabeceras(String Cabeceras)
         {
                        
-            File.WriteAllText(ruta + "cab." + nArch + "txt",kripto(Cabeceras)); 
+            File.WriteAllText(ruta + "cab" + nArch + ".txt",kripto(Cabeceras)); 
             
         }
 
@@ -57,11 +58,123 @@ namespace aramoxi_2._0
 
             String cab;
 
-            cab = Unkripto(File.ReadAllText(ruta + "cab." + nArch + "txt"));
+            cab = Unkripto(File.ReadAllText(ruta + "cab" + nArch + ".txt"));
 
             cab = cab + Cabecera;
 
-            File.WriteAllText(ruta + "cab." + nArch + "txt", kripto(cab));
+            File.WriteAllText(ruta + "cab" + nArch + ".txt", kripto(cab));
+
+        }
+
+        public void movenext()
+        {
+
+            if (ancho <= 0)
+            {
+
+                setancho();
+
+            }
+
+            indactivo += ancho;
+
+            if (indactivo >= File.ReadAllText(ruta + "Data" + nArch + ".txt").Length)
+            {
+
+                indactivo = indactivo - ancho;
+
+                throw new System.IndexOutOfRangeException("ha llegado al límite de la base de datos");
+                
+            }
+            else
+            {
+
+                active = Unkripto(File.ReadAllText(ruta + "Data" + nArch + ".txt").Substring(indactivo, ancho));
+
+            }
+
+        }
+
+        public void MovePrevous()
+        {
+
+            if (ancho <= 0)
+            {
+
+                setancho();
+
+            }
+
+            indactivo -= ancho;
+
+            if (indactivo <=0)
+            {
+
+                indactivo = indactivo + ancho;
+
+                throw new System.IndexOutOfRangeException("indice = 0");
+
+            }
+            else
+            {
+
+                active = Unkripto(File.ReadAllText(ruta + "Data" + nArch + ".txt").Substring(indactivo, ancho));
+
+            }
+
+        }
+
+        public void movelast()
+        {
+
+            if(ancho <= 0){
+
+                setancho();
+
+            }
+
+            indactivo = File.ReadAllText(ruta + "Data" + nArch + ".txt").Length - ancho;
+
+            active = Unkripto(File.ReadAllText(ruta + "Data" + nArch + ".txt").Substring(indactivo, ancho));
+
+        }
+
+        public void movefirst()
+        {
+
+            if (ancho <= 0)
+            {
+
+                setancho();
+
+            }
+
+            indactivo = 0;
+
+            active = Unkripto(File.ReadAllText(ruta + "Data" + nArch + ".txt").Substring(indactivo, ancho));
+
+        }
+
+
+        private void setancho()
+        {
+
+            int index = 0;
+            String[] aux;
+
+            ancho = 0;
+
+            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab" + nArch + ".txt")).Split(Convert.ToChar("€"));
+
+
+            for(index =0;index <= archivoCargado.Length;index++)
+            {
+
+                aux = archivoCargado[index].Split(Convert.ToChar("|"));
+
+                ancho += Convert.ToInt32(aux[2]);
+
+            }
 
         }
 
@@ -72,7 +185,7 @@ namespace aramoxi_2._0
             long index = 0;
             String output = "";
 
-            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab."+nArch+"txt")).Split(Convert.ToChar("€"));
+            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab"+nArch+".txt")).Split(Convert.ToChar("€"));
 
             for(index=0;index < archivoCargado.Length;index++)
             {
@@ -93,7 +206,7 @@ namespace aramoxi_2._0
                 if(Convert.ToString(id) == aux[0])
                 {
 
-                    output = Unkripto(File.ReadAllText(ruta + "Data."+nArch+"txt")).Substring(Convert.ToInt32(aux[1]),len);
+                    output = Unkripto(File.ReadAllText(ruta + "Data"+nArch+".txt")).Substring(Convert.ToInt32(aux[1]),len);
 
                     break;
                 }
