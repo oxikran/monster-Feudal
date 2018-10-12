@@ -17,6 +17,7 @@ namespace aramoxi_2._0
         int ancho;
         int indactivo;
         String nArch;
+        Boolean edita;
 
         public void OpenDB(String archivo)
         {
@@ -176,6 +177,57 @@ namespace aramoxi_2._0
 
             }
 
+            Array.Clear(archivoCargado, 0, archivoCargado.Length);
+
+        }
+
+        public void editar(String Field,String Data)
+        {
+
+            int cual = Convert.ToInt32(Field);
+            int index = 0;
+            int inicio = 0;
+            int cuanto = 0;
+            String[] aux;
+
+            if (edita)
+            {
+
+                archivoCargado = Unkripto(File.ReadAllText(ruta + "cab" + nArch + ".txt")).Split(Convert.ToChar("€"));
+
+                for (index=0;index <= cual; index++)
+                {
+
+                    aux = archivoCargado[index].Split(Convert.ToChar("|"));
+
+                    if(index == cual)
+                    {
+
+                        cuanto= Convert.ToInt32(aux[2]);
+
+                    }
+                    else
+                    {
+
+                        inicio += Convert.ToInt32(aux[2]);
+
+                    }
+
+
+                }
+
+                active.Replace(active.Substring(inicio, cuanto), Data.Substring(0, cuanto));
+
+            }
+
+        }
+
+        public void edit()
+        {
+
+            //modo editar
+            edita = true;
+
         }
 
         public void findbyid(int id)
@@ -237,7 +289,7 @@ namespace aramoxi_2._0
                 if (index == Convert.ToInt32(num) - 1)
                 {
 
-                    final = inicio + Convert.ToInt32(aux[2]);
+                    final = Convert.ToInt32(aux[2]);//inicio + Convert.ToInt32(aux[2]);
 
                 }
                 else
@@ -431,9 +483,8 @@ namespace aramoxi_2._0
         }
         private string separar2(string archivo)
         {
-            String output = "";
+            
             String[] separado;
-            int index = 0;
 
             separado = archivo.Split(Convert.ToChar("\\"));
             return separado[separado.Length];
