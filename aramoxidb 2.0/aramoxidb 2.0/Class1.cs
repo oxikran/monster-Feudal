@@ -18,6 +18,7 @@ namespace aramoxi_2._0
         int indactivo;
         String nArch;
         Boolean edita;
+        Boolean nuevo;
 
         public void OpenDB(String archivo)
         {
@@ -47,6 +48,22 @@ namespace aramoxi_2._0
 
         }
 
+        public void add(String Field,String Data)
+        {
+
+            editar(Field, Data);
+
+        }
+
+        public void addnew()
+        {
+
+            nuevo = true;
+
+            active = new string(Convert.ToChar(" "), ancho);
+
+        }
+
         public void CrearCabeceras(String Cabeceras)
         {
                        
@@ -64,6 +81,54 @@ namespace aramoxi_2._0
             cab = cab + Cabecera;
 
             File.WriteAllText(ruta + "cab" + nArch + ".txt", kripto(cab));
+
+        }
+
+        public void update()
+        {
+            if (edita)
+            {
+
+                edita = false;
+
+                String temp = Unkripto(File.ReadAllText(ruta + "Data" + nArch + ".txt"));
+
+                temp = temp.Remove(indactivo, ancho).Insert(indactivo, active);
+
+                File.WriteAllText(ruta + "Data" + nArch + ".txt", kripto(temp));
+                
+            }else if (nuevo)
+            {
+
+                nuevo = false;
+
+                String temp = Unkripto(File.ReadAllText(ruta + "Data" + nArch + ".txt"));
+
+                temp = temp + active;
+                //File.AppendText(ruta + "Data" + nArch + ".txt");
+
+                File.WriteAllText(ruta + "Data" + nArch + ".txt", kripto(temp));
+
+            }
+
+        }
+
+        public void deleteReg()
+        {
+
+            active = new string(Convert.ToChar(" "), active.Length);
+
+        }
+
+        public void deleteItem(String Field)
+        {
+
+            if (edita)
+            {
+
+                editar(Field, "");
+
+            }
 
         }
 
@@ -94,6 +159,8 @@ namespace aramoxi_2._0
 
             }
 
+            edita = false;
+
         }
 
         public void MovePrevous()
@@ -123,6 +190,8 @@ namespace aramoxi_2._0
 
             }
 
+            edita = false;
+
         }
 
         public void movelast()
@@ -137,6 +206,8 @@ namespace aramoxi_2._0
             indactivo = File.ReadAllText(ruta + "Data" + nArch + ".txt").Length - ancho;
 
             active = Unkripto(File.ReadAllText(ruta + "Data" + nArch + ".txt").Substring(indactivo, ancho));
+
+            edita = false;
 
         }
 
@@ -153,6 +224,8 @@ namespace aramoxi_2._0
             indactivo = 0;
 
             active = Unkripto(File.ReadAllText(ruta + "Data" + nArch + ".txt").Substring(indactivo, ancho));
+
+            edita = false;
 
         }
 
@@ -188,6 +261,7 @@ namespace aramoxi_2._0
             int index = 0;
             int inicio = 0;
             int cuanto = 0;
+            int x = 0;
             String[] aux;
 
             if (edita)
@@ -216,7 +290,62 @@ namespace aramoxi_2._0
 
                 }
 
-                active.Replace(active.Substring(inicio, cuanto), Data.Substring(0, cuanto));
+                if(Data.Length > cuanto) {
+
+                    x = cuanto - Data.Length;
+
+                    Data += new String(Convert.ToChar(" "), x);
+
+                }
+                else
+                {
+
+                    active.Replace(active.Substring(inicio, cuanto), Data.Substring(0, cuanto));
+                    
+                }
+
+
+            }
+            else
+            {
+
+                archivoCargado = Unkripto(File.ReadAllText(ruta + "cab" + nArch + ".txt")).Split(Convert.ToChar("€"));
+
+                for (index = 0; index <= cual; index++)
+                {
+
+                    aux = archivoCargado[index].Split(Convert.ToChar("|"));
+
+                    if (index == cual)
+                    {
+
+                        cuanto = Convert.ToInt32(aux[2]);
+
+                    }
+                    else
+                    {
+
+                        inicio += Convert.ToInt32(aux[2]);
+
+                    }
+
+
+                }
+
+                if (Data.Length > cuanto)
+                {
+
+                    x = cuanto - Data.Length;
+
+                    Data += new String(Convert.ToChar(" "), x);
+
+                }
+                else
+                {
+
+                    active.Replace(active.Substring(inicio, cuanto), Data.Substring(0, cuanto));
+
+                }
 
             }
 
@@ -227,6 +356,7 @@ namespace aramoxi_2._0
 
             //modo editar
             edita = true;
+            nuevo = false;
 
         }
 
