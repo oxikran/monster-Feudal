@@ -11,6 +11,7 @@ namespace aramoxi_2._0
     {
 
         String[] archivoCargado;
+        String guardar;
         String Clave;
         String ruta;
         String active;
@@ -20,9 +21,28 @@ namespace aramoxi_2._0
         Boolean edita;
         Boolean nuevo;
 
+        public aramoxiDB(String serie)
+        {
+
+            if (serie == "DEMO")
+            {
+
+               
+
+            }
+            else
+            {
+
+                
+
+            }
+
+        }
+
         public void OpenDB(String archivo)
         {
 
+            guardar = archivo;
 
             archivo = archivo + ".axdb";
 
@@ -45,6 +65,24 @@ namespace aramoxi_2._0
 
             }
 
+
+        }
+
+        public void closedb()
+        {
+
+            File.WriteAllText(guardar + ".axdb", Clave + File.ReadAllText(ruta + "cab" + nArch + ".txt") + File.ReadAllText(ruta + "Index" + nArch + ".txt") + File.ReadAllText(ruta + "Data" + nArch + ".txt"));
+
+            Array.Clear(archivoCargado,0,archivoCargado.Length);
+            guardar = "";
+            Clave="";
+            ruta = "";
+            active = "";
+            ancho = 0;
+            indactivo = 0;
+            nArch = "";
+            edita = false;
+            nuevo = false;
 
         }
 
@@ -71,14 +109,14 @@ namespace aramoxi_2._0
             
         }
 
-        public void addCabecera(String Cabecera)
+        public void addCabecera(int id,String Cabecera,int maxAncho)
         {
 
             String cab;
 
             cab = Unkripto(File.ReadAllText(ruta + "cab" + nArch + ".txt"));
 
-            cab = cab + Cabecera;
+            cab = cab + "|" + id + "|" + Cabecera + "|" + maxAncho;
 
             File.WriteAllText(ruta + "cab" + nArch + ".txt", kripto(cab));
 
