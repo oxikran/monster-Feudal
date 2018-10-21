@@ -17,12 +17,10 @@ namespace pruebaDB
             InitializeComponent();
         }
 
-        private void texto_Load(object sender, EventArgs e,String option)
+        private void texto_Load(object sender, EventArgs e)
         {
 
-            Select Case option{
-
-            }
+           
 
         }
     }

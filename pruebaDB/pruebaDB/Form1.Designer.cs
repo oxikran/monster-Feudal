@@ -63,6 +63,7 @@
             this.import.TabIndex = 1;
             this.import.Text = "Importar";
             this.import.UseVisualStyleBackColor = true;
+            this.import.Click += new System.EventHandler(this.import_Click);
             // 
             // seefich
             // 
