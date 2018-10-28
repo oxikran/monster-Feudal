@@ -86,7 +86,7 @@ namespace aramoxi_2._0
 
         }
 
-        public void add(String Field, String Data)
+        public void add(int Field, String Data)
         {
 
             editar(Field, Data);
@@ -116,7 +116,7 @@ namespace aramoxi_2._0
 
             cab = Unkripto(File.ReadAllText(ruta + "cab" + nArch + ".txt"));
 
-            cab = cab + "|" + id + "|" + Cabecera + "|" + maxAncho;
+            cab = cab + "|" + id + "|" + Cabecera + "|" + maxAncho + "$";
 
             File.WriteAllText(ruta + "cab" + nArch + ".txt", kripto(cab));
 
@@ -159,7 +159,7 @@ namespace aramoxi_2._0
 
         }
 
-        public void deleteItem(String Field)
+        public void deleteItem(int Field)
         {
 
             if (edita)
@@ -294,7 +294,7 @@ namespace aramoxi_2._0
 
         }
 
-        public void editar(String Field, String Data)
+        public void editar(int Field, String Data)
         {
 
             int cual = Convert.ToInt32(Field);
@@ -532,7 +532,7 @@ namespace aramoxi_2._0
         public String kripto(String input)
         {
 
-            String random = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ|€ ";
+            String random = "qwertyuiopasdfghjklzxcvbnmñQWERTYUIOPASDFGHJKLZXCVBNMÑ1234567890=-+!¡?¿()[]%^&@#/.,:áéíóúÁÉÍÓÚ|€$ ";
             String[] abecedario = new string[random.Length];
             string output = "";
             int x = 0;

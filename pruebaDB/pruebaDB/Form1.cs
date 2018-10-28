@@ -16,7 +16,9 @@ namespace pruebaDB
     public partial class Form1 : Form
     {
 
-        aramoxiDB db;
+
+        public General ui = new General();
+        aramoxiDB db = new aramoxiDB("");
 
         public Form1()
         {
@@ -27,11 +29,13 @@ namespace pruebaDB
         {
 
             String archivo = "";
-            OpenFileDialog fd = new OpenFileDialog();
             int col;
             int row;
+            String Cabeceras = "";
+            String info = "";
             Boolean primera = true;
 
+            OpenFileDialog fd = new OpenFileDialog();
 
             fd.InitialDirectory = @"C:\";
 
@@ -39,37 +43,76 @@ namespace pruebaDB
 
             fd.Filter = "Excel(*.xls)|*.xls";
 
-            if (fd.ShowDialog() == DialogResult.OK)
-            {
-                Microsoft.Office.Interop.Excel.Application excelobj = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook hoja;
+            ui.setIda("1");
 
-                hoja = excelobj.Workbooks.Open(fd.FileName);
+            texto f2 = new texto(1);
+            var result = f2.ShowDialog();
 
-                foreach(Microsoft.Office.Interop.Excel.Worksheet sheet in hoja.Worksheets)
+            if(result == DialogResult.OK) {
+                db.OpenDB(f2.ReturnValue1);
+            
+                if (fd.ShowDialog() == DialogResult.OK)
                 {
+                    Microsoft.Office.Interop.Excel.Application excelobj = new Microsoft.Office.Interop.Excel.Application();
+                    Microsoft.Office.Interop.Excel.Workbook hoja;
 
-                    Microsoft.Office.Interop.Excel.Range last = sheet.Cells.SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
-                    col = last.Column;
-                    row = last.Row;
+                    hoja = excelobj.Workbooks.Open(fd.FileName);
 
-                    for(int index = 1;index <= row;index++)
+                    foreach(Microsoft.Office.Interop.Excel.Worksheet sheet in hoja.Worksheets)
                     {
 
-                        for (int index2 = 1; index<= col;index++)
+                        Microsoft.Office.Interop.Excel.Range last = sheet.Cells.SpecialCells(Microsoft.Office.Interop.Excel.XlCellType.xlCellTypeLastCell, Type.Missing);
+                        col = last.Column;
+                        row = last.Row;
+
+                        for(int index = 1;index <= row;index++)
                         {
 
+                            if (index > 1)
+                            {
 
+                                db.addnew();
+                            
+                            }
+
+                            for (int index2 = 1; index2<= col;index2 ++)
+                            {
+
+                                if(index == 1)
+                                {
+
+                                    Cabeceras += index2 + "|" + sheet.Cells[index,index2].Value.ToString + "$" ;
+
+                                }
+                                else
+                                {
+
+                                    db.add(index2, sheet.Cells[index,index2].Value.ToString);  
+
+                                }
+
+                            }
+
+                            if(index== 1)
+                            {
+
+                                db.CrearCabeceras(Cabeceras);
+
+                            }
+                            else
+                            {
+
+                                db.update();
+
+                            }
 
                         }
 
                     }
 
+
                 }
-
-
             }
-
         }
     }
 }
