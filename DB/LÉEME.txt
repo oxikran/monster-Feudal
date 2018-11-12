@@ -1,0 +1,6 @@
+COSAS QUE DEBES HACER:
+
+-Comprobar que no haya un movimiento en la lista que no aprenda nadie y borrarlos
+-Comprobar que no haya nadie que aprenda un movimiento que no esté en la lista e indicarlos
+-Borrar "Tormenta de arena" y "Tormenta arena" de la lista y las tablas. Indicar si alguien lo aprendía.
+-Indicar si un movimiento sólo lo aprende un Pokémon y señalar cuál especie es

@@ -50,9 +50,11 @@ namespace pruebaDB
 
             fd.InitialDirectory = @"C:\";
 
-            fd.Title = "Elija el fichero Excel";
+            fd.Title = "Elija bd";
 
-            fd.Filter = "AramoxiDb(*.axdb)|*.axdb";
+            fd.Filter = "AramoxiDb(*.axdb)|*.axdb";//"AramoxiDb(*.axdb)|*.axdb";
+
+            fd.ShowDialog();
 
             textBox1.Text = fd.FileName;
         }

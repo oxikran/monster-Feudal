@@ -30,6 +30,7 @@ namespace pruebaDB
 
             String archivo = "";
             int col;
+            Boolean primero = true;
             int row;
             String Cabeceras = "";
             String info = "";
@@ -75,19 +76,31 @@ namespace pruebaDB
                             
                             }
 
-                            for (int index2 = 1; index2<= col;index2 ++)
+                            for (int index2 = 1; index2<= col-6;index2 ++)
                             {
 
                                 if(index == 1)
                                 {
+                                    if (primero)
+                                    {
 
-                                    Cabeceras += index2 + "|" + sheet.Cells[index,index2].Value.ToString + "$" ;
+                                        Cabeceras = Cabeceras + index2 + "|" + sheet.Cells[index,index2].Value  ;
+
+                                        primero = false;
+
+                                    }
+                                    else
+                                    {
+
+                                        Cabeceras = Cabeceras + "€" + index2 + "|" + sheet.Cells[index, index2].Value ;
+
+                                    }
 
                                 }
                                 else
                                 {
 
-                                    db.add(index2, sheet.Cells[index,index2].Value.ToString);  
+                                    db.add(index2, Convert.ToString(sheet.Cells[index,index2].Value));  
 
                                 }
 
@@ -112,6 +125,7 @@ namespace pruebaDB
 
 
                 }
+                db.closedb();
             }
         }
     }

@@ -44,7 +44,7 @@ namespace aramoxi_2._0
 
             guardar = archivo;
 
-            archivo = archivo + ".axdb";
+            archivo = archivo;//+ ".axdb";
 
             ruta = separar(archivo);
 
@@ -302,6 +302,7 @@ namespace aramoxi_2._0
             int inicio = 0;
             int cuanto = 0;
             int x = 0;
+            String Temp;
             String[] aux;
 
             if (edita)
@@ -352,10 +353,10 @@ namespace aramoxi_2._0
 
                 archivoCargado = Unkripto(File.ReadAllText(ruta + "cab" + nArch + ".txt")).Split(Convert.ToChar("€"));
 
-                for (index = 0; index <= cual; index++)
+                for (index = 1; index <= cual; index++)
                 {
 
-                    aux = archivoCargado[index].Split(Convert.ToChar("|"));
+                    aux = archivoCargado[index -1].Split(Convert.ToChar("|"));
 
                     if (index == cual)
                     {
@@ -373,12 +374,16 @@ namespace aramoxi_2._0
 
                 }
 
-                if (Data.Length > cuanto)
+                active = new string(Convert.ToChar(32), ponAncho());
+
+                if (Data.Length < cuanto)
                 {
 
-                    x = cuanto - Data.Length;
+                    x = cuanto - Data.Length -1 ;
 
                     Data += new String(Convert.ToChar(" "), x);
+
+                    active.Replace(active.Substring(inicio, cuanto), Data.Substring(0, cuanto));
 
                 }
                 else
@@ -389,6 +394,30 @@ namespace aramoxi_2._0
                 }
 
             }
+
+        }
+
+        private int ponAncho()
+        {
+
+            int Index = 0;
+
+            String[] aux;
+
+            ancho = 0;
+
+            archivoCargado = Unkripto(File.ReadAllText(ruta + "cab" + nArch + ".txt")).Split(Convert.ToChar("€"));
+
+            for(Index = 0;Index <= archivoCargado.Length - 1;Index ++)
+            {
+
+                aux = archivoCargado[Index].Split(Convert.ToChar("|"));
+
+                ancho += Convert.ToInt32(aux[2]);
+
+            }
+
+            return ancho;
 
         }
 
@@ -502,7 +531,7 @@ namespace aramoxi_2._0
             foreach (char d in input)
             {
 
-                for (index = 0; index <= orden.Length; index++)
+                for (index = 0; index <= orden.Length-1; index++)
                 {
 
                     if (Convert.ToString(d) == abecedario[index])
@@ -640,12 +669,12 @@ namespace aramoxi_2._0
             String[] separado;
             int index = 0;
 
-            separado = archivo.Split(Convert.ToChar("\\"));
+            separado = archivo.Split(Convert.ToChar(@"\"));
 
             for (index = 0; index < separado.Length - 1; index++)
             {
 
-                output += archivo[index] + "\\";
+                output += separado[index] + "\\";
 
             }
 
@@ -658,7 +687,7 @@ namespace aramoxi_2._0
             String[] separado;
 
             separado = archivo.Split(Convert.ToChar("\\"));
-            return separado[separado.Length];
+            return separado[separado.Length-1];
 
         }
     }
