@@ -47,6 +47,9 @@ Partial Class Form1
         Me.compBut = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ecripta = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'rutaApi
@@ -273,7 +276,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(174, 507)
+        Me.Button2.Location = New System.Drawing.Point(21, 507)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(270, 40)
@@ -289,11 +292,43 @@ Partial Class Form1
         Me.ecripta.Size = New System.Drawing.Size(481, 20)
         Me.ecripta.TabIndex = 24
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(321, 507)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(270, 40)
+        Me.Button3.TabIndex = 25
+        Me.Button3.Text = "Proceso coñazo hecho por no ser consistente"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(187, 265)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 26
+        Me.Label1.Text = "Label1"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(21, 551)
+        Me.Button4.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(270, 40)
+        Me.Button4.TabIndex = 27
+        Me.Button4.Text = "Salida"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 589)
+        Me.Controls.Add(Me.Button4)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.ecripta)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.compBut)
@@ -352,4 +387,7 @@ Partial Class Form1
     Friend WithEvents compBut As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents ecripta As TextBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button4 As Button
 End Class
