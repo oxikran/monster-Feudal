@@ -50,6 +50,8 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.SalidaText = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'rutaApi
@@ -305,7 +307,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(187, 265)
+        Me.Label1.Location = New System.Drawing.Point(566, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 26
@@ -321,11 +323,31 @@ Partial Class Form1
         Me.Button4.Text = "Salida"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(321, 551)
+        Me.Button5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(270, 40)
+        Me.Button5.TabIndex = 28
+        Me.Button5.Text = "Pereza humana"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'SalidaText
+        '
+        Me.SalidaText.Location = New System.Drawing.Point(21, 259)
+        Me.SalidaText.Margin = New System.Windows.Forms.Padding(2)
+        Me.SalidaText.Name = "SalidaText"
+        Me.SalidaText.Size = New System.Drawing.Size(481, 20)
+        Me.SalidaText.TabIndex = 29
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 589)
+        Me.Controls.Add(Me.SalidaText)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button3)
@@ -390,4 +412,6 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents SalidaText As TextBox
 End Class

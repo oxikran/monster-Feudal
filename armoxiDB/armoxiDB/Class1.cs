@@ -77,6 +77,13 @@ namespace armoxiDB
         }
 
 
+        public String ruta()
+        {
+
+            return rutaT;
+
+        }
+
         public void edit(int field, String Data)
         {
             String[] aux;

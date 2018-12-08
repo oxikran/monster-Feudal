@@ -1031,4 +1031,34 @@ Public Class Form1
         salida = "No Usados:" & vbCrLf & "Danza despertar" & vbCrLf & "Forcejeo" & vbCrLf & "Golpe mordaza" & vbCrLf & "Llama  final" & vbCrLf & "Martillo dragón" & vbCrLf & "Reciclaje" & vbCrLf & "Reflejo" & vbCrLf & "Tormenta de arena" & vbCrLf & "Trampa venenosa" & vbCrLf & vbCrLf & "Solo aprende un pokemon:" & vbCrLf & "Aerochorro" & vbTab & "Legendarios.xlsx" & vbCrLf & "Anillo ígneo" & vbTab & "Heobi, Hekubi y Heakabi.xlsx" & vbCrLf & "As oculto" & vbTab & "Slowpoke, Slowbro y Slowking.xlsx" & vbCrLf & "Ataque ala" & vbTab & "Spearow (S) y Fearow (S).xlsx" & vbCrLf & "Ataque óseo" & vbTab & "Munchlax (S) y Snorlax (S).xlsx" & vbCrLf & "Avalancha" & vbTab & "Venipede, Whirlipede, Scolipede y Scolipede (S).xlsx" & vbCrLf & "Beso amoroso" & vbTab & "Smoochum y Jynx.xlsx" & vbCrLf & "Beso dulce" & vbTab & "Smoochum y Jynx.xlsx" & vbCrLf & "Bomba germen" & vbTab & "Exeggcute y Exeggutor.xlsx" & vbCrLf & "Bomba huevo" & vbTab & "Exeggcute y Exeggutor.xlsx" & vbCrLf & "Caída libre" & vbTab & "Farfetch_d, Farfetch_d (SO) y Farfetch_d (SI).xlsx" & vbCrLf & "Chulería" & vbTab & "Humanos.xlsx" & vbCrLf & "Concha filo" & vbTab & "Farfetch_d, Farfetch_d (SO) y Farfetch_d (SI).xlsx" & vbCrLf & "Condena silvana" & vbTab & "Exeggcute y Exeggutor.xlsx" & vbCrLf & "Corte vacío" & vbTab & "Legendarios.xlsx" & vbCrLf & "Cosquillas" & vbTab & "Barboach y Whiscash.xlsx" & vbCrLf & "Cuerpo pesado" & vbTab & "Munchlax (S) y Snorlax (S).xlsx" & vbCrLf & "Distorsión" & vbTab & "Legendarios.xlsx" & vbCrLf & "Electrocañón" & vbTab & "Magby, Magmar (S) y Magmortar (S).xlsx" & vbCrLf & "Encanto" & vbTab & "Teddiursa (S) y Ursaring (S).xlsx" & vbCrLf & "Escupir" & vbTab & "Mawile.xlsx" & vbCrLf & "Estallido" & vbTab & "Legendarios.xlsx" & vbCrLf & "Estruendo" & vbTab & "Slakoth, Vigoroth y Slaking.xlsx" & vbCrLf & "Filo draco" & vbTab & "Legendarios.xlsx" & vbCrLf & "Foco resplandor" & vbTab & "Legendarios.xlsx" & vbCrLf & "Golpe kárate" & vbTab & "Sawk y Sawk (S).xlsx" & vbCrLf & "Hidrocañón" & vbTab & "Awabu, Bakabu y Mizubu.xlsx" & vbCrLf & "Mazazo" & vbTab & "Exeggcute y Exeggutor.xlsx" & vbCrLf & "Onda vacío" & vbTab & "Kartana.xlsx" & vbCrLf & "Paliza" & vbTab & "Sneasel y Weavile.xlsx" & vbCrLf & "Patada salto alta" & vbTab & "Spearow (S) y Fearow (S).xlsx" & vbCrLf & "Picoteo" & vbTab & "Farfetch_d, Farfetch_d (SO) y Farfetch_d (SI).xlsx" & vbCrLf & "Planta feroz" & vbTab & "Ondoha, Onjiga y Ondomori.xlsx" & vbCrLf & "Polvo veneno" & vbTab & "Exeggcute y Exeggutor.xlsx" & vbCrLf & "Puntada sombría" & vbTab & "Humanos.xlsx" & vbCrLf & "Recurrente" & vbTab & "Exeggcute y Exeggutor.xlsx" & vbCrLf & "Rueda fuego" & vbTab & "Growlithe y Arcanine.xlsx" & vbCrLf & "Salpicadura" & vbTab & "Magikarp (Todos), Gyarados y Gyarados (S).xlsx" & vbCrLf & "Sentencia" & vbTab & "Legendarios.xlsx" & vbCrLf & "Somnífero" & vbTab & "Exeggcute y Exeggutor.xlsx" & vbCrLf & "Telépata" & vbTab & "Spearow (S) y Fearow (S).xlsx" & vbCrLf & "Terranova" & vbTab & "Legendarios.xlsx" & vbCrLf & "Tierra viva" & vbTab & "Legendarios.xlsx" & vbCrLf & "Tragar" & vbTab & "Mawile.xlsx" & vbCrLf & "Trampa rocas" & vbTab & "Litwick, Lampent y Chandelure (S).xlsx" & vbCrLf & "Triataque" & vbTab & "Deino, Zweilous y Hydreigon.xlsx" & vbCrLf & "Tumba rocas" & vbTab & "Munchlax (S) y Snorlax (S).xlsx" & vbCrLf & "Vendaval" & vbTab & "Legendarios.xlsx" & vbCrLf & "Vuelo" & vbTab & "Legendarios.xlsx" & vbCrLf
         My.Computer.FileSystem.WriteAllText("C:\algo\salida.txt", salida, False)
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+        Dim excel As New Application
+        Dim workbook As Workbook
+        Dim sheet As Worksheet
+        Dim files() As String
+        Dim ids(374) As String
+        Dim movimientos(374) As String
+        Dim veces(374) As Integer
+        Dim pokemons(374) As String
+        Dim salida As String
+        Dim nombre As String
+        Dim partido() As String
+        'Dim nousado() As Integer
+
+        Dim vez As Integer = 0
+
+        files = Directory.GetFiles(CarpetaText.Text)
+
+        For Each file As String In files
+
+            partido = Split(file, "\")
+            salida += partido(UBound(partido)).Replace(".xlsx", "").Replace(",", vbCrLf).Replace(" y ", vbCrLf).Replace(" e ", vbCrLf).Replace(" ", "") & vbCrLf
+
+        Next
+
+        My.Computer.FileSystem.WriteAllText("C:\algo\copy.txt", salida, False)
+
+    End Sub
 End Class
