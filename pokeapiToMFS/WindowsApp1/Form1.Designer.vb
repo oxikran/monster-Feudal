@@ -52,6 +52,7 @@ Partial Class Form1
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.SalidaText = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'rutaApi
@@ -341,11 +342,21 @@ Partial Class Form1
         Me.SalidaText.Size = New System.Drawing.Size(481, 20)
         Me.SalidaText.TabIndex = 29
         '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(530, 50)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 44)
+        Me.Button6.TabIndex = 30
+        Me.Button6.Text = "Siguiente formulario"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(600, 589)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.SalidaText)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -414,4 +425,5 @@ Partial Class Form1
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents SalidaText As TextBox
+    Friend WithEvents Button6 As Button
 End Class

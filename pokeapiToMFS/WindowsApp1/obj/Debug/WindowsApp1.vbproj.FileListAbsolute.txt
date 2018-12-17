@@ -59,3 +59,4 @@ C:\Users\oxikr\source\repos\monster-Feudal\pokeapiToMFS\WindowsApp1\bin\Debug\Wi
 C:\Users\oxikr\source\repos\monster-Feudal\pokeapiToMFS\WindowsApp1\bin\Debug\armoxiDB.dll
 C:\Users\oxikr\source\repos\monster-Feudal\pokeapiToMFS\WindowsApp1\bin\Debug\armoxiDB.pdb
 C:\Users\oxikr\source\repos\monster-Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.vbproj.CopyComplete
+C:\Users\narciso\source\repos\monster-Feudal\pokeapiToMFS\WindowsApp1\obj\Debug\WindowsApp1.Form2.resources

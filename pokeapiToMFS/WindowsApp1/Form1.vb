@@ -1054,11 +1054,21 @@ Public Class Form1
         For Each file As String In files
 
             partido = Split(file, "\")
-            salida += partido(UBound(partido)).Replace(".xlsx", "").Replace(",", vbCrLf).Replace(" y ", vbCrLf).Replace(" e ", vbCrLf).Replace(" ", "") & vbCrLf
+            salida += partido(UBound(partido)).Replace(".xlsx", "").Replace(",", ",").Replace(" y ", ",").Replace(" e ", ",").Replace(" ", "") & ","
 
         Next
 
         My.Computer.FileSystem.WriteAllText("C:\algo\copy.txt", salida, False)
+
+        MessageBox.Show("he acabado mi señor.")
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+
+        Dim frm As New Form2
+
+        frm.Show()
 
     End Sub
 End Class
