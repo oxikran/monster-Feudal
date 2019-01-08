@@ -7,9 +7,13 @@ using LiteDB;
 
 namespace pruebaDB
 {
+
+    
+
     class DataBase
     {
 
+            
   
     }
 
@@ -51,4 +55,14 @@ namespace pruebaDB
         public string Descripcion_Menu { get; set; }
 
     }
+
+    public class pokemon
+    {
+
+        public string PokedexNum { get; set; }
+        public string NombrePok { get; set; }
+        public string 
+
+    }
+
 }
