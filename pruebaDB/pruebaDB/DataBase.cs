@@ -61,7 +61,24 @@ namespace pruebaDB
 
         public string PokedexNum { get; set; }
         public string NombrePok { get; set; }
-        public string 
+        public string HPpok { get; set; }
+        public string ATKpok { get; set; }
+        public string DEFpof { get; set; }
+        public string SATKpok { get; set; }
+        public string SDEFpok { get; set; }
+        public string VELpok { get; set; }
+
+    }
+
+    public class tipos
+    {
+
+        public string id { get; set; }
+        public string name { get; set; }
+        public string efectividades { get; set; }
+        public string neutro { get; set; }
+        public string inmune { get; set; }
+        public string poco { get; set; }
 
     }
 
