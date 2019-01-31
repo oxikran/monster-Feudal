@@ -29,7 +29,7 @@ namespace pruebaDB
     public class Moves
     {
 
-        public int Cod { get; set; }
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Tipo { get; set; }
         public string Categoria { get; set; }
@@ -59,7 +59,7 @@ namespace pruebaDB
     public class pokemon
     {
 
-        public string PokedexNum { get; set; }
+        public string ID { get; set; }
         public string NombrePok { get; set; }
         public string HPpok { get; set; }
         public string ATKpok { get; set; }
