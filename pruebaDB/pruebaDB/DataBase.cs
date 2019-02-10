@@ -20,8 +20,8 @@ namespace pruebaDB
     public class aprendizage
     {
 
+        public string Id { get; set; }
         public string Nombre { get; set; }
-        public string Aprendizaje { get; set; }
 
 
     }
@@ -33,7 +33,7 @@ namespace pruebaDB
         public string Nombre { get; set; }
         public string Tipo { get; set; }
         public string Categoria { get; set; }
-        public Boolean Damage { get; set; }
+        public string Damage { get; set; }
         public string Potencia { get; set; }
         public string Presicion { get; set; }
         public string Estado { get; set; }
@@ -42,7 +42,7 @@ namespace pruebaDB
         public int PP_Max { get; set; }
         public string Objetivo { get; set; }
         public int Prioridad { get; set; }
-        public Boolean Contacto { get; set; }
+        public string Contacto { get; set; }
         public int Min_Golpes { get; set; }
         public int Max_Golpes { get; set; }
         public int Min_turnos { get; set; }

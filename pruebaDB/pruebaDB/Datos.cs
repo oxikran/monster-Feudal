@@ -32,7 +32,8 @@ namespace pruebaDB
         private void button2_Click(object sender, EventArgs e)
         {
 
-            using(var db = new LiteDB.LiteDatabase(@"Pokes.db")) {
+            using (var db = new LiteDB.LiteDatabase(@"Pokes.db"))
+            {
 
                 Microsoft.Office.Interop.Excel.Application obj;
                 Microsoft.Office.Interop.Excel.Workbook hoja;
@@ -45,15 +46,17 @@ namespace pruebaDB
                 Sheet = (Microsoft.Office.Interop.Excel.Worksheet)hoja.ActiveSheet;
 
                 var todo = db.GetCollection<pokemon>("pokemons");
-                for (int index = 2;index < 89; index++) { 
-                    var pok = new pokemon {
+                for (int index = 2; index < 89; index++)
+                {
+                    var pok = new pokemon
+                    {
 
-                        ID = Convert.ToString(Sheet.Cells[index,2].Value),
+                        ID = Convert.ToString(Sheet.Cells[index, 2].Value),
                         NombrePok = Convert.ToString(Sheet.Cells[index, 1].Value),
-                        HPpok= Convert.ToString(Sheet.Cells[index, 3].Value),
+                        HPpok = Convert.ToString(Sheet.Cells[index, 3].Value),
                         ATKpok = Convert.ToString(Sheet.Cells[index, 4].Value),
                         DEFpof = Convert.ToString(Sheet.Cells[index, 5].Value),
-                        SATKpok= Convert.ToString(Sheet.Cells[index,6].Value),
+                        SATKpok = Convert.ToString(Sheet.Cells[index, 6].Value),
                         SDEFpok = Convert.ToString(Sheet.Cells[index, 7].Value),
                         VELpok = Convert.ToString(Sheet.Cells[index, 8].Value)
                     };
@@ -72,7 +75,7 @@ namespace pruebaDB
             {
                 var collection = db.GetCollection<pokemon>("pokemons");
                 var pokemons = collection.FindById(textBox1.Text);
-                
+
                 MessageBox.Show(pokemons.NombrePok);
             }
 
@@ -97,44 +100,127 @@ namespace pruebaDB
                 var todo = db.GetCollection<Moves>("Moves");
                 for (int index = 2; index < 89; index++)
                 {
-                    var pok = new Moves
+                    var mov = new Moves
                     {
 
                         Id = Convert.ToInt64(Sheet.Cells[index, 1].Value),
                         Nombre = Convert.ToString(Sheet.Cells[index, 2].Value),
                         Tipo = Convert.ToString(Sheet.Cells[index, 3].Value),
-                        Categoria = Convert.ToString(Sheet.Cells[index, 4].Value)
+                        Categoria = Convert.ToString(Sheet.Cells[index, 4].Value),
+                        Damage = Convert.ToString(Sheet.Cells[index, 5].Value),
+                        Potencia = Convert.ToString(Sheet.Cells[index, 6].Value),
+                        Presicion = Convert.ToString(Sheet.Cells[index, 7].Value),
+                        Estado = Convert.ToString(Sheet.Cells[index, 8].Value),
+                        Provabilidad_Estado = Convert.ToInt64(Sheet.Cells[index, 9].Value),
+                        PP_Min = Convert.ToInt64(Sheet.Cells[index, 10].Value),
+                        PP_Max = Convert.ToInt64(Sheet.Cells[index, 11].Value),
+                        Objetivo = Convert.ToString(Sheet.Cells[index, 12].Value),
+                        Prioridad = Convert.ToInt64(Sheet.Cells[index, 13].Value),
+                        Contacto = Convert.ToString(Sheet.Cells[index, 14].Value),
+                        Min_Golpes = Convert.ToInt64(Sheet.Cells[index, 15].Value),
+                        Max_Golpes = Convert.ToInt64(Sheet.Cells[index, 16].Value),
+                        Min_turnos = Convert.ToInt64(Sheet.Cells[index, 17].Value),
+                        Max_turnos = Convert.ToInt64(Sheet.Cells[index, 18].Value),
+                        Drenado = Convert.ToInt64(Sheet.Cells[index, 19].Value),
+                        Recuperacion_Vida = Convert.ToInt64(Sheet.Cells[index, 20].Value),
+                        Critico = Convert.ToInt64(Sheet.Cells[index, 21].Value),
+                        Retroceso = Convert.ToInt64(Sheet.Cells[index, 22].Value),
+                        Stat = Convert.ToInt64(Sheet.Cells[index, 23].Value),
+                        Descripcion_Menu = Convert.ToInt64(Sheet.Cells[index, 24].Value)
+
                     };
-                    todo.Insert(pok);
+                    todo.Insert(mov);
                 }
             }
 
             MessageBox.Show("Fin");
+        }
 
-            //public int Id { get; set; }
-            //public string Nombre { get; set; }
-            //public string Tipo { get; set; }
-            //public string Categoria { get; set; }
-            //public Boolean Damage { get; set; }
-            //public string Potencia { get; set; }
-            //public string Presicion { get; set; }
-            //public string Estado { get; set; }
-            //public int Provabilidad_Estado { get; set; }
-            //public int PP_Min { get; set; }
-            //public int PP_Max { get; set; }
-            //public string Objetivo { get; set; }
-            //public int Prioridad { get; set; }
-            //public Boolean Contacto { get; set; }
-            //public int Min_Golpes { get; set; }
-            //public int Max_Golpes { get; set; }
-            //public int Min_turnos { get; set; }
-            //public int Max_turnos { get; set; }
-            //public int Drenado { get; set; }
-            //public int Recuperacion_Vida { get; set; }
-            //public int Critico { get; set; }
-            //public int Retroceso { get; set; }
-            //public int Stat { get; set; }
-            //public string Descripcion_Menu { get; set; }
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog OF = new OpenFileDialog();
+
+            OF.Filter = "*.xlsx|*.xlsx";
+            OF.ShowDialog();
+            textBox2.Text = OF.FileName;
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            using (var db = new LiteDB.LiteDatabase(@"Moves.db"))
+            {
+                var collection = db.GetCollection<Moves>("moves");
+                var moves = collection.FindById(textBox2.Text);
+
+                MessageBox.Show(moves.Nombre);
+            }
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog OF = new OpenFileDialog();
+
+            OF.Filter = "*.xlsx|*.xlsx";
+            OF.ShowDialog();
+            textBox3.Text = OF.FileName;
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+            using (var db = new LiteDB.LiteDatabase(@"Tipos.db"))
+            {
+
+                Microsoft.Office.Interop.Excel.Application obj;
+                Microsoft.Office.Interop.Excel.Workbook hoja;
+                Microsoft.Office.Interop.Excel.Worksheet Sheet;
+
+                obj = new Microsoft.Office.Interop.Excel.Application();
+
+                hoja = obj.Workbooks.Open(textBox2.Text);
+
+                Sheet = (Microsoft.Office.Interop.Excel.Worksheet)hoja.ActiveSheet;
+
+                var todo = db.GetCollection<tipos>("Tipos");
+                for (int index = 2; index < 89; index++)
+                {
+                    var mov = new tipos
+                    {
+
+                        id = Convert.ToString(Sheet.Cells[index, 1].Value),
+                        name = Convert.ToString(Sheet.Cells[index, 2].Value),
+                        efectividades = Convert.ToString(Sheet.Cells[index,3].Value),
+                        neutro = Convert.ToString(Sheet.Cells[index, 4].Value),
+                        inmune = Convert.ToString(Sheet.Cells[index, 5].Value),
+                        poco = Convert.ToString(Sheet.Cells[index, 6].Value)
+
+                    };
+                    todo.Insert(mov);
+                }
+            }
+
+            MessageBox.Show("Fin");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            using (var db = new LiteDB.LiteDatabase(@"Tipos.db"))
+            {
+                var collection = db.GetCollection<tipos>("tipos");
+                var types = collection.FindById(textBox3.Text);
+
+                var salida = collection.Find(LiteDB.Query.GTE("Nombre", textBox3.Text));
+
+                //MessageBox.Show(salida.);
+            }
+
         }
     }
 }
