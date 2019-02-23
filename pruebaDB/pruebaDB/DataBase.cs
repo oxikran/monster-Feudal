@@ -20,9 +20,9 @@ namespace pruebaDB
     public class aprendizage
     {
 
-        public string Id { get; set; }
-        public string Nombre { get; set; }
-
+        public int Id { get; set; }
+        public string Move { get; set; }
+        public string Como { get; set; }
 
     }
 

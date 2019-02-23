@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using System.IO;
 
 namespace pruebaDB
 {
@@ -71,12 +72,23 @@ namespace pruebaDB
         private void button3_Click(object sender, EventArgs e)
         {
 
+           
+
             using (var db = new LiteDB.LiteDatabase(@"Pokes.db"))
             {
                 var collection = db.GetCollection<pokemon>("pokemons");
-                var pokemons = collection.FindById(textBox1.Text);
+                var pokemons = collection.Find(LiteDB.Query.EQ("NombrePok",textBox1.Text));//collection.FindById(textBox1.Text);
+                
+                foreach(var algo in pokemons)
+                {
 
-                MessageBox.Show(pokemons.NombrePok);
+                    var loca = algo.ID;
+
+                }
+
+
+
+                var yo = "yo";
             }
 
         }
@@ -220,6 +232,77 @@ namespace pruebaDB
 
                 //MessageBox.Show(salida.);
             }
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+
+            dialog.ShowDialog();
+
+            textBox4.Text = dialog.SelectedPath + "\\" ;
+
+        //Dim dialog As New FolderBrowserDialog
+
+        //'dialog.RootFolder = "C:\Users\oxikr\Source\Repos\monster Feudal\DB"
+
+        //dialog.ShowDialog()
+
+        //CarpetaText.Text = dialog.SelectedPath & "\"
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+            string[] archivos;
+            Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook wb = new Microsoft.Office.Interop.Excel.Workbook();
+            string[] aux;
+
+            archivos = Directory.GetFiles(textBox4.Text);
+             foreach(string archivo in archivos)
+            {
+
+                wb = Excel.Workbooks.Open(archivo);
+
+                foreach(Worksheet sheet in wb.Worksheets)
+                {
+
+                    aux = archivo.Split(Convert.ToChar("\\"));
+
+                    using (var db = new LiteDB.LiteDatabase(aux[aux.Length] + ".db")) {
+
+                        var todo = db.GetCollection<aprendizage>("Apredizage");
+
+                        for (int index = 2; index < 635569; index++){
+
+                            if (sheet.Cells[index, 1].Value = "")
+                            {
+
+                                break;
+
+                            };
+
+                            var apr = new aprendizage
+                            {
+
+                                Id = index,
+                                Move = sheet.Cells[index, 1].Value,
+                                Como = sheet.Cells[index, 2].Value
+
+                            };
+                            todo.Insert(apr);
+
+                        };
+
+                    };
+                };
+
+            };
+
 
         }
     }
