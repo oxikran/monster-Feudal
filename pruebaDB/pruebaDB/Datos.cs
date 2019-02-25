@@ -258,28 +258,28 @@ namespace pruebaDB
         {
 
             string[] archivos;
-            Microsoft.Office.Interop.Excel.Application Excel = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook wb = new Microsoft.Office.Interop.Excel.Workbook();
+            Microsoft.Office.Interop.Excel.Application obj = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook wb; //new Microsoft.Office.Interop.Excel.Workbook();
             string[] aux;
 
             archivos = Directory.GetFiles(textBox4.Text);
              foreach(string archivo in archivos)
             {
 
-                wb = Excel.Workbooks.Open(archivo);
+                wb = obj.Workbooks.Open(archivo);
 
-                foreach(Worksheet sheet in wb.Worksheets)
+                foreach(Microsoft.Office.Interop.Excel.Worksheet sheet in wb.Worksheets)
                 {
 
                     aux = archivo.Split(Convert.ToChar("\\"));
 
-                    using (var db = new LiteDB.LiteDatabase(aux[aux.Length] + ".db")) {
+                    using (var db = new LiteDB.LiteDatabase(sheet.Name + ".db")) {
 
                         var todo = db.GetCollection<aprendizage>("Apredizage");
 
                         for (int index = 2; index < 635569; index++){
 
-                            if (sheet.Cells[index, 1].Value = "")
+                            if (sheet.Cells[index, 1].Value == null)
                             {
 
                                 break;
@@ -290,8 +290,8 @@ namespace pruebaDB
                             {
 
                                 Id = index,
-                                Move = sheet.Cells[index, 1].Value,
-                                Como = sheet.Cells[index, 2].Value
+                                Move = Convert.ToString(sheet.Cells[index, 1].Value),
+                                Como = Convert.ToString(sheet.Cells[index, 2].Value)
 
                             };
                             todo.Insert(apr);
