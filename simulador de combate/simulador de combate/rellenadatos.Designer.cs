@@ -56,6 +56,20 @@
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.EV1 = new System.Windows.Forms.TextBox();
+            this.EV2 = new System.Windows.Forms.TextBox();
+            this.EV3 = new System.Windows.Forms.TextBox();
+            this.EV4 = new System.Windows.Forms.TextBox();
+            this.EV5 = new System.Windows.Forms.TextBox();
+            this.EV6 = new System.Windows.Forms.TextBox();
+            this.Vida = new System.Windows.Forms.Label();
+            this.Ataque = new System.Windows.Forms.Label();
+            this.Defensa = new System.Windows.Forms.Label();
+            this.SAtaque = new System.Windows.Forms.Label();
+            this.SDefensa = new System.Windows.Forms.Label();
+            this.Velocidad = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,7 +228,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(383, 54);
+            this.checkBox1.Location = new System.Drawing.Point(316, 400);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(50, 17);
             this.checkBox1.TabIndex = 18;
@@ -296,11 +310,145 @@
             this.label10.TabIndex = 27;
             this.label10.Text = "IV\'S";
             // 
+            // EV1
+            // 
+            this.EV1.Location = new System.Drawing.Point(238, 97);
+            this.EV1.MaxLength = 3;
+            this.EV1.Name = "EV1";
+            this.EV1.Size = new System.Drawing.Size(70, 20);
+            this.EV1.TabIndex = 28;
+            this.EV1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EV1_Keypress);
+            // 
+            // EV2
+            // 
+            this.EV2.Location = new System.Drawing.Point(238, 133);
+            this.EV2.MaxLength = 3;
+            this.EV2.Name = "EV2";
+            this.EV2.Size = new System.Drawing.Size(70, 20);
+            this.EV2.TabIndex = 29;
+            this.EV2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EV2_Keypress);
+            // 
+            // EV3
+            // 
+            this.EV3.Location = new System.Drawing.Point(238, 166);
+            this.EV3.MaxLength = 3;
+            this.EV3.Name = "EV3";
+            this.EV3.Size = new System.Drawing.Size(70, 20);
+            this.EV3.TabIndex = 30;
+            this.EV3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EV3_Keypress);
+            // 
+            // EV4
+            // 
+            this.EV4.Location = new System.Drawing.Point(238, 200);
+            this.EV4.MaxLength = 3;
+            this.EV4.Name = "EV4";
+            this.EV4.Size = new System.Drawing.Size(70, 20);
+            this.EV4.TabIndex = 31;
+            this.EV4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EV4_Keypress);
+            // 
+            // EV5
+            // 
+            this.EV5.Location = new System.Drawing.Point(238, 234);
+            this.EV5.MaxLength = 3;
+            this.EV5.Name = "EV5";
+            this.EV5.Size = new System.Drawing.Size(70, 20);
+            this.EV5.TabIndex = 32;
+            this.EV5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EV5_Keypress);
+            // 
+            // EV6
+            // 
+            this.EV6.Location = new System.Drawing.Point(238, 268);
+            this.EV6.MaxLength = 3;
+            this.EV6.Name = "EV6";
+            this.EV6.Size = new System.Drawing.Size(70, 20);
+            this.EV6.TabIndex = 33;
+            this.EV6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EV6_Keypress);
+            // 
+            // Vida
+            // 
+            this.Vida.AutoSize = true;
+            this.Vida.Location = new System.Drawing.Point(313, 97);
+            this.Vida.Name = "Vida";
+            this.Vida.Size = new System.Drawing.Size(0, 13);
+            this.Vida.TabIndex = 34;
+            // 
+            // Ataque
+            // 
+            this.Ataque.AutoSize = true;
+            this.Ataque.Location = new System.Drawing.Point(313, 135);
+            this.Ataque.Name = "Ataque";
+            this.Ataque.Size = new System.Drawing.Size(0, 13);
+            this.Ataque.TabIndex = 35;
+            // 
+            // Defensa
+            // 
+            this.Defensa.AutoSize = true;
+            this.Defensa.Location = new System.Drawing.Point(313, 169);
+            this.Defensa.Name = "Defensa";
+            this.Defensa.Size = new System.Drawing.Size(0, 13);
+            this.Defensa.TabIndex = 36;
+            // 
+            // SAtaque
+            // 
+            this.SAtaque.AutoSize = true;
+            this.SAtaque.Location = new System.Drawing.Point(313, 203);
+            this.SAtaque.Name = "SAtaque";
+            this.SAtaque.Size = new System.Drawing.Size(0, 13);
+            this.SAtaque.TabIndex = 37;
+            // 
+            // SDefensa
+            // 
+            this.SDefensa.AutoSize = true;
+            this.SDefensa.Location = new System.Drawing.Point(313, 237);
+            this.SDefensa.Name = "SDefensa";
+            this.SDefensa.Size = new System.Drawing.Size(0, 13);
+            this.SDefensa.TabIndex = 38;
+            // 
+            // Velocidad
+            // 
+            this.Velocidad.AutoSize = true;
+            this.Velocidad.Location = new System.Drawing.Point(313, 271);
+            this.Velocidad.Name = "Velocidad";
+            this.Velocidad.Size = new System.Drawing.Size(0, 13);
+            this.Velocidad.TabIndex = 39;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(366, 55);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 13);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Nivel:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(406, 51);
+            this.textBox9.MaxLength = 3;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(87, 20);
+            this.textBox9.TabIndex = 41;
+            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text9_keypress);
+            // 
             // rellenadatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 429);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.Velocidad);
+            this.Controls.Add(this.SDefensa);
+            this.Controls.Add(this.SAtaque);
+            this.Controls.Add(this.Defensa);
+            this.Controls.Add(this.Ataque);
+            this.Controls.Add(this.Vida);
+            this.Controls.Add(this.EV6);
+            this.Controls.Add(this.EV5);
+            this.Controls.Add(this.EV4);
+            this.Controls.Add(this.EV3);
+            this.Controls.Add(this.EV2);
+            this.Controls.Add(this.EV1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBox7);
             this.Controls.Add(this.comboBox6);
@@ -368,5 +516,19 @@
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox EV1;
+        private System.Windows.Forms.TextBox EV2;
+        private System.Windows.Forms.TextBox EV3;
+        private System.Windows.Forms.TextBox EV4;
+        private System.Windows.Forms.TextBox EV5;
+        private System.Windows.Forms.TextBox EV6;
+        private System.Windows.Forms.Label Vida;
+        private System.Windows.Forms.Label Ataque;
+        private System.Windows.Forms.Label Defensa;
+        private System.Windows.Forms.Label SAtaque;
+        private System.Windows.Forms.Label SDefensa;
+        private System.Windows.Forms.Label Velocidad;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox9;
     }
 }
