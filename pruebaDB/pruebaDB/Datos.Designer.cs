@@ -48,6 +48,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button15 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -233,11 +238,62 @@
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(605, 361);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(100, 26);
+            this.button13.TabIndex = 24;
+            this.button13.Text = " Consultar";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(690, 326);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(15, 20);
+            this.button14.TabIndex = 23;
+            this.button14.Text = "?";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(32, 330);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Tipos";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(77, 327);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(607, 20);
+            this.textBox5.TabIndex = 21;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(12, 361);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(100, 23);
+            this.button15.TabIndex = 20;
+            this.button15.Text = "Crear BD";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // Datos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 450);
+            this.Controls.Add(this.button13);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.button15);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.label4);
@@ -287,5 +343,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button15;
     }
 }

@@ -59,6 +59,20 @@ namespace simulador_de_combate
                 }
             }
 
+            using (var baseD = new LiteDB.LiteDatabase(@"C:\DBS\Naturalezas.db"))
+            {
+                var Data = baseD.GetCollection<naturaleza>("naturaleza");
+                var naturalezas = Data.FindAll().OrderBy(x => x.nombre);//Find(LiteDB.Query.EQ("NombrePok", textBox1.Text));//collection.FindById(textBox1.Text);
+
+                
+
+                foreach (var algo in naturalezas)
+                {
+
+                    NaturalezaCombo.Items.Add(algo.nombre);
+
+                }
+            }
 
         }
 
@@ -472,16 +486,16 @@ namespace simulador_de_combate
         private void refrescaLabels()
         {
             ////textBox9.Text = "0";
-            ////EV1.Text = "0";
-            ////EV2.Text = "0";
-            ////EV3.Text = "0";
-            ////EV4.Text = "0";
-            ////EV5.Text = "0";
-            ////EV5.Text = "0";
-            ////EV6.Text = "0";
+            ////EV1.Text = "0"; naturalezaPV
+            ////EV2.Text = "0"; naturalezaAT
+            ////EV3.Text = "0"; naturalezaDE
+            ////EV4.Text = "0"; naturalezaEA
+            ////EV5.Text = "0"; naturalezaED
+            ////EV6.Text = "0"; naturalezaVE
 
             //(((2 * Base * Nivel / 100) + 5) + IV + (EV / 4)) * Naturaleza
             //((2*Base*Nivel)+Nivel+10)+IV+(EV/4)
+
 
 
         }

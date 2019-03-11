@@ -70,6 +70,8 @@
             this.Velocidad = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.NaturalezaCombo = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +80,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 12);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(481, 21);
+            this.comboBox1.Size = new System.Drawing.Size(677, 21);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -219,7 +221,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(379, 320);
+            this.pictureBox1.Location = new System.Drawing.Point(575, 316);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(114, 97);
             this.pictureBox1.TabIndex = 17;
@@ -228,7 +230,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(316, 400);
+            this.checkBox1.Location = new System.Drawing.Point(506, 396);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(50, 17);
             this.checkBox1.TabIndex = 18;
@@ -430,11 +432,30 @@
             this.textBox9.TabIndex = 41;
             this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.text9_keypress);
             // 
+            // NaturalezaCombo
+            // 
+            this.NaturalezaCombo.FormattingEnabled = true;
+            this.NaturalezaCombo.Location = new System.Drawing.Point(568, 51);
+            this.NaturalezaCombo.Name = "NaturalezaCombo";
+            this.NaturalezaCombo.Size = new System.Drawing.Size(121, 21);
+            this.NaturalezaCombo.TabIndex = 42;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(503, 55);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 13);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "Naturaleza:";
+            // 
             // rellenadatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 429);
+            this.ClientSize = new System.Drawing.Size(701, 429);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.NaturalezaCombo);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Velocidad);
@@ -530,5 +551,7 @@
         private System.Windows.Forms.Label Velocidad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.ComboBox NaturalezaCombo;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -82,4 +82,17 @@ namespace pruebaDB
 
     }
 
+    public class naturaleza
+    {
+
+        public string id { get; set; }
+        public string nombre { get; set; }
+        public Double Ataque { get; set; }
+        public Double Defensa { get; set; }
+        public Double SAataque { get; set; }
+        public Double SDefensa { get; set; }
+        public Double Velocidad { get; set; }
+
+    }
+
 }

@@ -305,5 +305,66 @@ namespace pruebaDB
 
 
         }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog OF = new OpenFileDialog();
+
+            OF.Filter = "*.xlsx|*.xlsx";
+            OF.ShowDialog();
+            textBox5.Text = OF.FileName;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            using (var db = new LiteDB.LiteDatabase(@"Naturalezas.db"))
+            {
+                var collection = db.GetCollection<naturaleza>("naturaleza");
+                var moves = collection.FindById(textBox5.Text);
+
+                MessageBox.Show(moves.nombre);
+            }
+
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+
+            using (var db = new LiteDB.LiteDatabase(@"Naturalezas.db"))
+            {
+
+                Microsoft.Office.Interop.Excel.Application obj;
+                Microsoft.Office.Interop.Excel.Workbook hoja;
+                Microsoft.Office.Interop.Excel.Worksheet Sheet;
+
+                obj = new Microsoft.Office.Interop.Excel.Application();
+
+                hoja = obj.Workbooks.Open(textBox5.Text);
+
+                Sheet = (Microsoft.Office.Interop.Excel.Worksheet)hoja.ActiveSheet;
+
+                var todo = db.GetCollection<naturaleza>("naturaleza");
+                for (int index = 2; index < 26; index++)
+                {
+                    var mov = new naturaleza
+                    {
+
+                        id = Convert.ToString(Sheet.Cells[index, 1].Value),
+                        nombre = Convert.ToString(Sheet.Cells[index, 2].Value),
+                        Ataque = Convert.ToDouble(Sheet.Cells[index, 3].Value),
+                        Defensa = Convert.ToDouble(Sheet.Cells[index, 4].Value),
+                        SAataque = Convert.ToDouble(Sheet.Cells[index, 5].Value),
+                        SDefensa =  Convert.ToDouble(Sheet.Cells[index, 6].Value),
+                        Velocidad = Convert.ToDouble(Sheet.Cells[index, 7].Value)
+
+                    };
+                    todo.Insert(mov);
+                }
+            }
+
+            MessageBox.Show("Fin");
+
+        }
     }
 }
